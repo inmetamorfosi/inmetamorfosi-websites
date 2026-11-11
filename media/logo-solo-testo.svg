@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Livello_2" data-name="Livello 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 373.87 53.02">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #1d1e1b;
+        font-family: Futura-Medium, Futura;
+        font-size: 45.35px;
+        font-weight: 500;
+      }
+
+      .cls-2 {
+        letter-spacing: 0em;
+      }
+
+      .cls-3 {
+        letter-spacing: -.04em;
+      }
+    </style>
+  </defs>
+  <g id="Livello_1-2" data-name="Livello 1">
+    <text class="cls-1" transform="translate(0 39.94)"><tspan x="0" y="0">inME</tspan><tspan class="cls-3" x="105.4" y="0">T</tspan><tspan x="125.42" y="0">AMOR</tspan><tspan class="cls-2" x="270.44" y="0">F</tspan><tspan x="293.53" y="0">OSI</tspan></text>
+  </g>
+</svg>

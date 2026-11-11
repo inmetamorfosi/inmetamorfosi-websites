@@ -1,0 +1,189 @@
+/* ═══════════════════════════════════════════════════════
+   Siti dimostrativi — personalità di ogni sito
+   (sopra demo.css: loghi, aperture diverse, animazioni in più)
+   ═══════════════════════════════════════════════════════ */
+
+/* ---------- logo ---------- */
+.brand { gap: 12px; }
+.brand svg.mark { width: 42px; height: 42px; flex-shrink: 0; }
+.brand .wm { display: flex; flex-direction: column; line-height: 1; }
+.brand .wm b { font-family: var(--font-h); font-weight: var(--h-weight); font-size: 1.15rem; letter-spacing: .01em; }
+.brand .wm small { font: 700 .58rem var(--font-b); letter-spacing: .22em; text-transform: uppercase; opacity: .6; margin-top: 4px; }
+.site-foot .brand { color: #fff; margin-bottom: 14px; }
+
+/* ---------- titoli che entrano parola per parola ---------- */
+.split-words .w { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: .08em; }
+.split-words .w > span { display: inline-block; transform: translateY(110%); transition: transform .9s cubic-bezier(.2, .8, .2, 1); }
+.split-words.go .w > span { transform: none; }
+
+/* ---------- testi che scorrono ---------- */
+.marquee { overflow: hidden; white-space: nowrap; padding: 16px 0; background: var(--ink); color: var(--bg); }
+.marquee .track { display: inline-flex; gap: 42px; animation: marquee 28s linear infinite; font: 600 1.05rem var(--font-h); }
+.marquee .track span::after { content: "✦"; margin-left: 42px; color: var(--primary); }
+@keyframes marquee { to { transform: translateX(-50%); } }
+
+/* ---------- foto che si muovono allo scorrimento ---------- */
+.parallax { will-change: transform; }
+
+/* ---------- riquadri che fluttuano ---------- */
+.float-card {
+  position: absolute; z-index: 3; background: #fff; color: var(--ink);
+  border-radius: 16px; padding: 12px 16px; box-shadow: 0 18px 40px rgba(0,0,0,.14);
+  display: flex; gap: 10px; align-items: center; font-weight: 700; font-size: .9rem;
+  animation: floaty 6s ease-in-out infinite;
+}
+.float-card i { font-style: normal; width: 34px; height: 34px; border-radius: 10px; display: grid; place-items: center; background: var(--soft); font-size: 1.1rem; }
+.float-card small { display: block; font-weight: 500; opacity: .6; font-size: .75rem; }
+@keyframes floaty { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+
+/* ---------- bollino che gira ---------- */
+.spin-badge { position: absolute; width: 130px; height: 130px; z-index: 3; animation: spin 18s linear infinite; }
+.spin-badge text { font: 700 10.5px var(--font-b); letter-spacing: 3px; text-transform: uppercase; fill: var(--ink); }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ═══════════ 1 · PARRUCCHIERE — rosa vivo, nero, arco ═══════════ */
+.t-salon .hero-arch { padding: 70px 0 90px; background: radial-gradient(1200px 500px at 90% 0%, #ffd9e2 0%, transparent 60%), var(--bg); color: var(--ink); min-height: auto; }
+.t-salon .hero-arch::after { display: none; }
+.t-salon .hero-arch .wrap { display: grid; grid-template-columns: 1.15fr .85fr; gap: 56px; align-items: center; }
+.t-salon .hero-arch h1 { font-size: clamp(2.6rem, 6vw, 5rem); font-style: italic; letter-spacing: -.02em; }
+.t-salon .hero-arch h1 em { font-style: normal; color: var(--primary); }
+.t-salon .hero-arch .eyebrow { color: var(--primary); opacity: 1; }
+.t-salon .arch { position: relative; }
+.t-salon .arch .img { border-radius: 400px 400px 24px 24px; overflow: hidden; aspect-ratio: 3/4; box-shadow: 0 40px 80px rgba(209, 77, 114, .25); }
+.t-salon .arch .img img { width: 100%; height: 115%; object-fit: cover; }
+.t-salon .arch .spin-badge { left: -50px; bottom: 40px; }
+.t-salon .btn { border-radius: 0; letter-spacing: .06em; text-transform: uppercase; font-size: .85rem; }
+.t-salon .card { border-radius: 0; }
+.t-salon .card img { aspect-ratio: 3/4; }
+.t-salon .sec h2 { font-style: italic; }
+.t-salon .promo { border-radius: 0; background: linear-gradient(120deg, #d14d72, #f08a5d); }
+
+/* ═══════════ 2 · TRATTORIA — terracotta e oliva, calore ═══════════ */
+.t-trattoria .hero { min-height: 88vh; }
+.t-trattoria .hero::after { background: linear-gradient(180deg, rgba(30,18,10,.55), rgba(30,18,10,.35) 50%, rgba(30,18,10,.75)); }
+.t-trattoria .hero h1 { font-size: clamp(2.6rem, 6.4vw, 5.2rem); font-weight: 600; font-variation-settings: "SOFT" 100; }
+.t-trattoria .stamp {
+  display: inline-grid; place-items: center; width: 92px; height: 92px; border-radius: 50%;
+  border: 2px dashed rgba(255,255,255,.7); font: 700 .7rem/1.2 var(--font-b); letter-spacing: .12em; text-transform: uppercase; margin-bottom: 22px;
+  animation: spin 30s linear infinite;
+}
+.t-trattoria .wave { display: block; width: 100%; height: 60px; margin-top: -59px; position: relative; z-index: 3; }
+.t-trattoria .sec-soft { background: #f5ead6; }
+.t-trattoria .dish span { font-family: var(--font-h); font-size: 1.15rem; font-weight: 600; }
+.t-trattoria .dish { border-bottom: 2px dotted #d9c3a3; }
+.t-trattoria .menu-col h3 { font-style: italic; color: var(--accent); border-bottom: 2px solid var(--accent); }
+.t-trattoria .split img { border-radius: 200px 200px 14px 14px; }
+
+/* ═══════════ 3 · STUDIO MEDICO — fresco, pulito, riquadri fluttuanti ═══════════ */
+.t-medico .hero-split { background: radial-gradient(700px 400px at 85% 20%, #c9f4ec 0%, transparent 70%), radial-gradient(500px 300px at 10% 90%, #e3ecff 0%, transparent 70%), var(--bg); }
+.t-medico .hero-split h1 { font-size: clamp(2.4rem, 5vw, 4rem); letter-spacing: -.03em; }
+.t-medico .hero-split h1 em { font-style: normal; color: var(--primary); }
+.t-medico .hero-img { position: relative; overflow: visible !important; box-shadow: none !important; }
+.t-medico .hero-img img { border-radius: 32px; box-shadow: 0 30px 60px rgba(11, 37, 69, .18); }
+.t-medico .hero-img .float-card.a { left: -40px; top: 18%; }
+.t-medico .hero-img .float-card.b { right: -24px; bottom: 14%; animation-delay: -3s; }
+.t-medico .btn { border-radius: 14px; }
+.t-medico .stats > div { background: var(--soft); border-radius: 20px; padding: 22px 10px; }
+.t-medico .page-hero { background: linear-gradient(120deg, #e7faf6, #eef3ff); }
+
+/* ═══════════ 4 · IMPRESA EDILE — giallo cantiere, nero, maiuscolo ═══════════ */
+.t-edile h1, .t-edile h2, .t-edile .brand .wm b { text-transform: uppercase; letter-spacing: -.01em; }
+.t-edile .hero { min-height: 86vh; }
+.t-edile .hero::after { background: linear-gradient(90deg, rgba(0,0,0,.82) 0%, rgba(0,0,0,.35) 75%); }
+.t-edile .hero h1 { font-size: clamp(2.6rem, 6vw, 5rem); line-height: 1; }
+.t-edile .hero h1 mark { background: var(--primary); color: #111; padding: 0 .12em; }
+.t-edile .stripes { height: 14px; background: repeating-linear-gradient(-45deg, var(--primary) 0 18px, #111 18px 36px); }
+.t-edile .stats { background: #111; color: #fff; border-radius: 0; padding: 36px 20px; }
+.t-edile .stats b { font-size: 3rem; color: var(--primary); }
+.t-edile .stats span { color: #ddd; opacity: 1; }
+.t-edile .card { border-radius: 0; border: 0; border-bottom: 4px solid var(--primary); }
+.t-edile .page-hero { background: #111; color: #fff; }
+.t-edile .page-hero p { color: #ddd; }
+
+/* ═══════════ 5 · CANTINA — notte, oro, eleganza ═══════════ */
+.t-cantina { --gold: #c9a227; }
+.t-cantina .site-head { background: rgba(20, 10, 12, .92); border-color: rgba(201, 162, 39, .25); color: #f3e9d7; }
+.t-cantina .site-head .nav a.on, .t-cantina .site-head .nav a:hover { color: var(--gold); }
+.t-cantina .hero { min-height: 90vh; text-align: center; }
+.t-cantina .hero .wrap { display: flex; flex-direction: column; align-items: center; }
+.t-cantina .hero h1 { font-size: clamp(2.6rem, 6vw, 5rem); letter-spacing: .02em; margin-left: auto; margin-right: auto; }
+.t-cantina .hero p { margin-left: auto; margin-right: auto; }
+.t-cantina .hero::after { background: radial-gradient(ellipse at center, rgba(20,10,12,.35) 0%, rgba(20,10,12,.85) 85%); }
+.t-cantina .gold-line { width: 120px; height: 1px; background: var(--gold); margin: 18px auto; }
+.t-cantina .eyebrow { color: var(--gold) !important; }
+.t-cantina .btn { border-radius: 2px; letter-spacing: .1em; text-transform: uppercase; font-size: .82rem; }
+.t-cantina .product .ph { border-radius: 2px; background: linear-gradient(180deg, #fff, #f4ede2); }
+.t-cantina .sec-soft { background: #1c1012; color: #f3e9d7; }
+.t-cantina .sec-soft .review { background: #2a1a1d; border-color: #3b2a2d; color: #f3e9d7; }
+
+/* ═══════════ 6 · CERAMICHE — cobalto vivo, forme morbide, giocoso ═══════════ */
+.t-ceramiche .hero-blob { min-height: auto; padding: 60px 0 90px; color: var(--ink); background: var(--bg); overflow: hidden; }
+.t-ceramiche .hero-blob::after { display: none; }
+.t-ceramiche .hero-blob .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+.t-ceramiche .hero-blob h1 { font-size: clamp(2.6rem, 6vw, 4.8rem); line-height: 1.02; }
+.t-ceramiche .hero-blob h1 em { font-style: italic; color: var(--primary); }
+.t-ceramiche .hero-blob .eyebrow { color: var(--accent); opacity: 1; }
+.t-ceramiche .blob-wrap { position: relative; aspect-ratio: 1; }
+.t-ceramiche .blob {
+  position: absolute; inset: 0; overflow: hidden;
+  border-radius: 58% 42% 53% 47% / 45% 55% 45% 55%;
+  animation: morph 14s ease-in-out infinite;
+  box-shadow: 0 40px 80px rgba(35, 64, 217, .25);
+}
+.t-ceramiche .blob img { width: 100%; height: 100%; object-fit: cover; }
+.t-ceramiche .blob-2 { inset: auto -6% -8% auto; width: 42%; height: 42%; border: 8px solid var(--bg); animation-delay: -5s; z-index: 2; }
+.t-ceramiche .blob-wrap .spin-badge { top: -18px; left: -18px; }
+.t-ceramiche .blob-wrap .spin-badge circle { fill: var(--accent); }
+.t-ceramiche .blob-wrap .spin-badge text { fill: #fff; }
+@keyframes morph {
+  0%, 100% { border-radius: 58% 42% 53% 47% / 45% 55% 45% 55%; }
+  50% { border-radius: 42% 58% 40% 60% / 58% 42% 58% 42%; }
+}
+.t-ceramiche .product .ph { border-radius: 40% 40% 18px 18px / 28% 28% 18px 18px; background: #fff; }
+.t-ceramiche .sec-soft { background: var(--primary); color: #fff; }
+.t-ceramiche .sec-soft .eyebrow { color: #ffd3b6; }
+.t-ceramiche .sec-soft .review { color: var(--ink); }
+.t-ceramiche .btn { border-radius: 999px; }
+
+@media (max-width: 860px) {
+  .t-salon .hero-arch .wrap, .t-ceramiche .hero-blob .wrap { grid-template-columns: 1fr; }
+  .t-salon .arch { max-width: 360px; margin: 0 auto; }
+  .t-salon .arch .spin-badge { left: -16px; width: 100px; height: 100px; }
+  .t-medico .hero-img .float-card.a { left: 8px; }
+  .t-medico .hero-img .float-card.b { right: 8px; }
+  .t-ceramiche .blob-wrap { max-width: 420px; margin: 0 auto; width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .split-words .w > span { transform: none; transition: none; }
+  .marquee .track, .float-card, .spin-badge, .t-ceramiche .blob, .t-trattoria .stamp { animation: none; }
+}
+/* foto di apertura che si muovono: niente zoom iniziale, margine per lo scorrimento */
+.hero-bg.parallax { animation: none; }
+.t-edile .hero h1 { font-size: clamp(2.3rem, 5vw, 4.1rem); }
+.t-edile .hero .wrap { padding-top: 30px; }
+.t-cantina .lang { border-color: rgba(201, 162, 39, .5); }
+.t-cantina .lang button { color: #f3e9d7; }
+.t-cantina .lang button.on { background: var(--gold); color: #140a0c; }
+.t-cantina .cart-link, .t-cantina .burger { color: #f3e9d7; }
+.t-ceramiche .hero-blob .wrap > *, .t-salon .hero-arch .wrap > * { min-width: 0; }
+@media (max-width: 560px) {
+  .t-ceramiche .hero-blob h1 { font-size: 2.05rem; }
+  .t-salon .hero-arch h1 { font-size: 2.5rem; }
+  .t-edile .hero h1 { font-size: 2.1rem; }
+}
+/* ceramiche: titoli più leggibili */
+.t-ceramiche .hero-blob h1 { letter-spacing: -.02em; line-height: 1.04; }
+.t-ceramiche h2 { letter-spacing: -.015em; }
+@media (max-width: 560px) { .t-ceramiche .hero-blob h1 { font-size: 2.4rem; } }
+/* parole animate: spazio per le lettere che scendono (g, p) e per l'inclinazione del corsivo */
+.split-words .w { padding: 0 .12em .22em .04em; margin: 0 -.12em -.22em -.04em; }
+/* riquadri chiari dentro le sezioni colorate: testo sempre leggibile */
+.t-ceramiche .sec-soft :is(.trust > div, .steps3 > div, .tl, .card, .person, .review, .faq details, .note-box, .price-list, .values li) { color: var(--ink); }
+.t-ceramiche .sec-soft .steps3 > div::before { color: var(--primary); }
+.t-ceramiche .sec-soft .timeline::before { background: rgba(255,255,255,.35); }
+.t-ceramiche .sec-soft .tl::before { box-shadow: 0 0 0 4px var(--primary); background: var(--accent); }
+.t-cantina .sec-soft :is(.trust > div, .steps3 > div, .tl, .card, .person, .faq details, .note-box, .values li) { background: #2a1a1d; border-color: #3b2a2d; color: #f3e9d7; }
+.t-cantina .sec-soft .tl::before { box-shadow: 0 0 0 4px #1c1012; }
+.t-cantina .sec-soft .tl b, .t-cantina .sec-soft .steps3 > div::before { color: var(--gold); }
+.t-cantina .sec-soft .product h3 { color: #f3e9d7; }
+.t-cantina .sec-soft .product .pr { color: var(--gold); }

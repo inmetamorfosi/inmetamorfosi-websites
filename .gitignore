@@ -1,0 +1,4 @@
+# Pacchetti e file di lavoro, non fanno parte del sito
+websites-sito.zip
+.DS_Store
+.claude/

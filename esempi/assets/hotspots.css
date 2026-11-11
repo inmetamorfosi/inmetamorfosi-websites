@@ -1,0 +1,85 @@
+/* ═══════════════════════════════════════════════════════
+   Pulsanti "cosa c'è dentro" sopra le sezioni dei siti dimostrativi
+   Verde = incluso nel pacchetto · Arancione = modulo extra
+   ═══════════════════════════════════════════════════════ */
+
+.hs {
+  position: absolute; top: 16px; right: 16px; z-index: 30;
+  font: 600 13px/1.35 "Inter", system-ui, sans-serif;
+  opacity: 0; transform: scale(.4);
+  transition: opacity .5s ease, transform .5s cubic-bezier(.2, 1.6, .4, 1);
+}
+.hs.show { opacity: 1; transform: scale(1); }
+.hs-off .hs { display: none; }
+
+.hs-dot {
+  position: relative;
+  width: 38px; height: 38px; border-radius: 50%;
+  border: 3px solid #fff; cursor: pointer; padding: 0;
+  background: #1f9d63; color: #fff; font-size: 18px; font-weight: 800; line-height: 1;
+  display: grid; place-items: center;
+  box-shadow: 0 6px 16px rgba(0,0,0,.25);
+}
+.hs.extra .hs-dot { background: #e8472a; }
+.hs.page .hs-dot { background: #3b5bdb; }
+.hs-dot::before, .hs-dot::after {
+  content: ""; position: absolute; inset: -3px; border-radius: 50%;
+  border: 3px solid currentColor; color: #1f9d63;
+  animation: hsPulse 2s ease-out infinite;
+}
+.hs-dot::after { animation-delay: 1s; }
+.hs.extra .hs-dot::before, .hs.extra .hs-dot::after { color: #e8472a; }
+.hs.page .hs-dot::before, .hs.page .hs-dot::after { color: #3b5bdb; }
+@keyframes hsPulse {
+  0% { transform: scale(1); opacity: .9; }
+  100% { transform: scale(2.1); opacity: 0; }
+}
+
+.hs-tip {
+  position: absolute; top: 46px; right: 0; width: 270px;
+  background: #fff; color: #1f1f1d; border-radius: 14px; padding: 14px 16px;
+  box-shadow: 0 18px 40px rgba(0,0,0,.22);
+  opacity: 0; visibility: hidden; transform: translateY(-6px);
+  transition: opacity .2s ease, transform .2s ease, visibility .2s;
+  pointer-events: none; text-align: left;
+}
+.hs:hover .hs-tip, .hs.open .hs-tip, .hs-dot:focus-visible + .hs-tip { opacity: 1; visibility: visible; transform: none; pointer-events: auto; }
+.hs-tip strong { display: block; font-size: 15px; margin-bottom: 4px; }
+.hs-tag {
+  display: inline-block; font-size: 11px; font-weight: 800; letter-spacing: .05em; text-transform: uppercase;
+  padding: 3px 9px; border-radius: 999px; margin-bottom: 8px;
+  background: #e3f5ec; color: #157a4c;
+}
+.hs.extra .hs-tag { background: #fde6e0; color: #c93a20; }
+.hs.page .hs-tag { background: #e5eafc; color: #2f49b5; }
+.hs-tip p { font-weight: 400; color: #4a4a46; font-size: 13px; }
+
+/* posizioni particolari */
+.hs.left { right: auto; left: 16px; }
+.hs.left .hs-tip { right: auto; left: 0; }
+.hs.up .hs-tip { top: auto; bottom: 46px; }
+.wa .hs, .cookie .hs { top: -14px; right: -10px; }
+.cookie .hs { right: auto; left: -12px; }
+.cookie .hs .hs-tip { right: auto; left: 0; top: auto; bottom: 46px; }
+.wa .hs .hs-tip { top: auto; bottom: 46px; }
+
+/* legenda */
+.hs-legend {
+  position: fixed; left: 50%; bottom: 18px; transform: translateX(-50%); z-index: 44;
+  display: flex; gap: 14px; align-items: center;
+  background: rgba(31,31,29,.92); color: #fff; border-radius: 999px; padding: 8px 16px;
+  font: 600 12px/1 "Inter", system-ui, sans-serif; white-space: nowrap;
+}
+.hs-legend i { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 6px; vertical-align: -1px; }
+.hs-off .hs-legend { display: none; }
+@media (max-width: 560px) {
+  .hs-tip { width: 230px; }
+  .hs-legend { bottom: 86px; font-size: 11px; gap: 10px; padding: 7px 12px; }
+}
+@media (prefers-reduced-motion: reduce) { .hs-dot::before, .hs-dot::after { animation: none; } }
+/* pulsante accanto a una riga di testo (es. disponibilità del prodotto) */
+.stock { display: inline-block; padding-right: 48px; min-height: 30px; }
+.stock > .hs { top: -6px; right: 0; }
+.stock > .hs .hs-dot { width: 30px; height: 30px; font-size: 15px; }
+.stock > .hs .hs-tip { top: 38px; }
+@media (max-width: 560px) { .hs-legend { left: 12px; transform: none; bottom: 24px; } }
