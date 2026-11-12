@@ -18,7 +18,11 @@
   }
 
   function applyWho() {
-    document.querySelectorAll('[data-fill="per"]').forEach(function (el) { el.textContent = who.nome ? "Per " + who.nome : "Siti web su misura"; });
+    document.querySelectorAll('[data-fill="per"]').forEach(function (el) { el.textContent = who.nome ? "Per " + who.nome : "Siti web su misura per attività e professionisti"; });
+    // la prova parte già con il settore e la città del cliente
+    var tw = document.getElementById("try-what"), tc = document.getElementById("try-where");
+    if (tw && who.settore) tw.value = who.settore;
+    if (tc && who.citta) tc.value = who.citta;
     document.querySelectorAll('[data-fill="nome"]').forEach(function (el) { el.textContent = who.nome || (el.tagName === "B" && el.closest(".bub") ? "il tuo nome" : "Il tuo nome"); });
     document.querySelectorAll('[data-fill="ask"]').forEach(function (el) {
       el.textContent = "Chi mi consigli come " + sector() + (who.citta ? " a " + who.citta : " qui vicino") + "?";
@@ -41,27 +45,24 @@
     playSearch(true);
   }
 
-  /* ---------- apertura: la ricerca si scrive da sola e il cliente sale in cima ---------- */
+  /* ---------- apertura: la ricerca si scrive da sola, poi compare il sito del cliente ---------- */
   var demo = document.getElementById("search-demo"), q = document.getElementById("sd-q"), timers = [];
   function later(fn, ms) { timers.push(setTimeout(fn, ms)); }
   function playSearch(restart) {
     if (!demo) return;
     timers.forEach(clearTimeout); timers = [];
-    demo.classList.remove("results", "rise");
+    demo.classList.add("typing");
     q.textContent = "";
     var text = query(), i = 0;
     later(function step() {
       q.textContent = text.slice(0, ++i);
-      if (i < text.length) later(step, 65);
-      else {
-        later(function () { demo.classList.add("results"); }, 350);
-        later(function () { demo.classList.add("rise"); }, 1700);
-      }
-    }, restart ? 300 : 900);
+      if (i < text.length) later(step, 60);
+      else later(function () { demo.classList.remove("typing"); }, 450);
+    }, restart ? 300 : 800);
   }
 
   /* ---------- barra delle sezioni: evidenzia dove sei ---------- */
-  var links = Array.prototype.slice.call(document.querySelectorAll(".secnav-links a"));
+  var links = Array.prototype.slice.call(document.querySelectorAll(".nav-links a"));
   var secs = links.map(function (a) { return document.querySelector(a.getAttribute("href")); });
   function onScroll() {
     var y = window.scrollY + window.innerHeight * 0.35, cur = -1;
@@ -82,14 +83,26 @@
   var io = new IntersectionObserver(function (es) {
     es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
   }, { threshold: 0.25 });
-  document.querySelectorAll(".why-card, .swap, .rv").forEach(function (el) { io.observe(el); });
+  document.querySelectorAll(".swap").forEach(function (el) { io.observe(el); });
 
-  /* ---------- 01: la domanda ---------- */
-  var askBtn = document.getElementById("ask-btn");
-  if (askBtn) askBtn.addEventListener("click", function () {
-    askBtn.setAttribute("aria-expanded", "true");
-    document.getElementById("ask-a").hidden = false;
-  });
+  /* ---------- la prova: cerchiamo insieme su Google e su ChatGPT ---------- */
+  var tryForm = document.getElementById("try");
+  function tryText() {
+    var w = (document.getElementById("try-what").value || "").trim(), d = (document.getElementById("try-where").value || "").trim();
+    return { w: w || sector(), d: d };
+  }
+  if (tryForm) {
+    tryForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var t = tryText();
+      window.open("https://www.google.com/search?q=" + encodeURIComponent(t.w + (t.d ? " " + t.d : " vicino a me")), "_blank", "noopener");
+    });
+    document.getElementById("try-ai").addEventListener("click", function () {
+      var t = tryText();
+      var ask = "Chi mi consigli come " + t.w + (t.d ? " a " + t.d : " qui vicino") + "?";
+      window.open("https://chatgpt.com/?q=" + encodeURIComponent(ask), "_blank", "noopener");
+    });
+  }
 
   /* ---------- 02: griglia degli esempi e sito a tutto schermo ---------- */
   var cards = Array.prototype.slice.call(document.querySelectorAll(".dcard"));
@@ -227,9 +240,13 @@
   var answers = document.getElementById("answers").content.querySelectorAll("p");
   var ans = document.getElementById("qa-answer");
   var chipsQ = document.querySelectorAll(".qchip");
+  var qaWrap = document.querySelector(".qa");
   function showQ(i) {
     chipsQ.forEach(function (c, k) { c.setAttribute("aria-selected", String(k === i)); });
     ans.innerHTML = ""; ans.appendChild(answers[i].cloneNode(true));
+    // su tablet verticale e telefono la risposta compare subito sotto la domanda toccata
+    if (window.innerWidth <= 900) chipsQ[i].insertAdjacentElement("afterend", ans);
+    else if (ans.parentNode !== qaWrap) qaWrap.appendChild(ans);
   }
   chipsQ.forEach(function (c, i) { c.addEventListener("click", function () { showQ(i); }); });
   showQ(0);
@@ -258,8 +275,8 @@
   if (qs.get("shot")) {
     timers.forEach(clearTimeout);
     q.textContent = query();
-    demo.classList.add("results", "rise");
-    document.querySelectorAll(".why-card, .swap, .rv").forEach(function (el) { el.classList.add("in"); });
+    demo.classList.remove("typing");
+    document.querySelectorAll(".swap").forEach(function (el) { el.classList.add("in"); });
     document.documentElement.classList.add("shot");
   }
 
@@ -267,6 +284,18 @@
   if (qs.get("apri")) {
     var dc = document.querySelector('.dcard[data-site="' + qs.get("apri").replace(/[^a-z-]/g, "") + '"]');
     if (dc) { open(dc); if (qs.get("vista") === "mobile") setView("mobile"); }
+  }
+
+  /* ---------- pulsante WhatsApp fisso su telefono ---------- */
+  var mcta = document.getElementById("mcta"), heroEl = document.getElementById("inizio"), closeEl = document.getElementById("contatti");
+  if (mcta && heroEl && closeEl) {
+    var mUpdate = function () {
+      var past = window.scrollY > heroEl.offsetHeight * 0.8;
+      var atClose = closeEl.getBoundingClientRect().top < window.innerHeight * 0.85;
+      mcta.classList.toggle("on", past && !atClose);
+    };
+    window.addEventListener("scroll", mUpdate, { passive: true });
+    mUpdate();
   }
 
   /* ---------- tracking ---------- */

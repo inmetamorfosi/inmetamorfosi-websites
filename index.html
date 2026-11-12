@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Siti web su misura, lo vedi prima di decidere | inMetamorfosi</title>
+<title>Il tuo sito su misura: lo vedi prima di decidere | inMetamorfosi</title>
 <meta name="description" content="Siti web su misura per attività e professionisti. Testi e foto li curiamo noi, prima di decidere vedi il tuo sito completo, e lo paghi una volta: è tuo. Da 1.100 € + IVA.">
 <!-- ANTEPRIMA: niente indicizzazione finché la pagina è su GitHub Pages. Quando va online su inmetamorfosi.com, togliere questa riga. -->
 <meta name="robots" content="noindex, nofollow">
@@ -52,100 +52,112 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Strichpunkt+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/sito.css?v=22">
+<link rel="stylesheet" href="css/sito.css?v=32">
 <link rel="icon" href="media/logo-inmetamorfosi.svg" type="image/svg+xml">
 </head>
 <body>
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N4VNL76F" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-<!-- ═══════════ APERTURA ═══════════ -->
-<header class="hero" id="inizio">
-  <div class="hero-top shell">
-    <a href="https://www.inmetamorfosi.com" class="logo" aria-label="inMetamorfosi"><img src="media/logo-solo-testo.svg" alt="inMetamorfosi"></a>
-    <a href="#contatti" class="link-cta" data-cta="hero-top">Parliamone <span aria-hidden="true">→</span></a>
-  </div>
-  <div class="shell hero-grid">
-    <div class="hero-copy">
-      <p class="eyebrow" data-fill="per">Siti web su misura</p>
-      <h1>Il tuo sito, su misura.<br><span class="accent">Lo vedi prima di decidere.</span></h1>
-      <p class="lede">Ci racconti la tua attività: in cinque giorni ti facciamo vedere il tuo sito, completo. Se ti piace, è tuo.</p>
-      <ul class="proofs">
-        <li><b>Prima lo vedi</b><span>poi decidi</span></li>
-        <li><b>Testi e foto</b><span>li facciamo noi</span></li>
-        <li><b>Nessun canone</b><span>il sito è tuo</span></li>
-      </ul>
-    </div>
-
-    <!-- la ricerca che si scrive da sola: il cliente si vede salire in cima -->
-    <div class="search-demo" id="search-demo" aria-hidden="true">
-      <div class="sd-bar">
-        <svg viewBox="0 0 24 24" class="sd-ico"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg>
-        <span class="sd-q" id="sd-q"></span><i class="sd-caret"></i>
-      </div>
-      <ol class="sd-list">
-        <li class="sd-item other o1"><span class="sd-url">altro-sito.it</span><i class="l w70"></i><i class="l w90 thin"></i></li>
-        <li class="sd-item other o2"><span class="sd-url">un-altro.it</span><i class="l w55"></i><i class="l w80 thin"></i></li>
-        <li class="sd-item you">
-          <span class="sd-url" id="sd-url">iltuosito.it</span>
-          <b class="sd-name" data-fill="nome">Il tuo nome</b>
-          <span class="sd-stars"><span class="st">★★★★★</span> 4,9 · recensioni Google</span>
-          <span class="sd-actions"><em>Chiama</em><em>WhatsApp</em><em>Indicazioni</em></span>
-        </li>
-      </ol>
-    </div>
-  </div>
-</header>
-
-<!-- ═══════════ BARRA DELLE SEZIONI (fissa) ═══════════ -->
-<nav class="secnav" id="secnav" aria-label="Sezioni">
-  <div class="shell secnav-in">
-    <a href="#inizio" class="secnav-logo" aria-label="Torna su"><img src="media/logo-inmetamorfosi.svg" alt=""></a>
-    <div class="secnav-links">
-      <a href="#perche">Perché</a>
+<!-- ═══════════ MENU (in cima, sempre visibile) ═══════════ -->
+<nav class="nav" id="nav" aria-label="Sezioni">
+  <div class="shell nav-in">
+    <a href="#inizio" class="nav-logo" aria-label="inMetamorfosi, torna su"><img src="media/logo-inmetamorfosi.svg" alt="inMetamorfosi"></a>
+    <div class="nav-links" id="nav-links">
+      <a href="#prova">La prova</a>
       <a href="#esempi">Esempi</a>
-      <a href="#lavoro">Il lavoro</a>
       <a href="#come">Come funziona</a>
       <a href="#prezzi">Prezzi</a>
       <a href="#domande">Domande</a>
       <a href="#noi">Chi siamo</a>
     </div>
-    <a href="#contatti" class="btn btn-accent btn-sm" data-cta="nav">Contatti</a>
+    <a href="#contatti" class="btn btn-coral btn-sm nav-cta" data-cta="nav">Scrivici</a>
   </div>
 </nav>
 
 <main>
 
-<!-- ═══════════ 01 · PERCHÉ ═══════════ -->
-<section class="sec" id="perche">
-  <div class="shell">
-    <div class="ask">
-      <p class="ask-q">Quando ti consigliano qualcuno, prima di chiamarlo, <span class="accent">cosa fai?</span></p>
-      <button class="ask-btn" id="ask-btn" aria-expanded="false" aria-controls="ask-a">Risposta</button>
-      <p class="ask-a" id="ask-a" hidden>Lo cerchi su internet. <b>Come fanno i tuoi clienti con te.</b></p>
+<!-- ═══════════ APERTURA ═══════════ -->
+<header class="hero" id="inizio">
+  <div class="shell hero-grid">
+    <div class="hero-copy">
+      <p class="kicker" data-fill="per">Siti web su misura per attività e professionisti</p>
+      <h1>Il tuo sito, su misura. <span class="coral">Lo vedi prima di decidere.</span></h1>
+      <p class="lede">Ci racconti la tua attività in venti minuti. In cinque giorni ti facciamo vedere il tuo sito completo, con il tuo nome e le tue foto. Se ti piace è tuo; se no, non ci perdi niente.</p>
+      <div class="hero-ctas">
+        <a href="#esempi" class="btn btn-coral" data-cta="hero-esempi">Guarda gli esempi</a>
+        <a href="https://wa.me/393888174824?text=Ciao%2C%20vorrei%20vedere%20il%20mio%20sito" target="_blank" rel="noopener" class="btn btn-line" data-cta="hero-whatsapp">Scrivici su WhatsApp</a>
+      </div>
+      <ul class="proofs">
+        <li><b>Prima lo vedi</b><span>poi decidi</span></li>
+        <li><b>Testi e foto</b><span>li facciamo noi</span></li>
+        <li><b>Prezzo fisso</b><span>nessun canone</span></li>
+      </ul>
     </div>
 
-    <div class="sec-head">
-      <span class="num">01</span>
+    <!-- la ricerca che si scrive da sola: in cima compare il sito del cliente -->
+    <div class="search-card" id="search-demo" aria-hidden="true">
+      <div class="sc-bar">
+        <svg viewBox="0 0 24 24" class="sc-ico"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg>
+        <span class="sc-q" id="sd-q">parrucchiere vicino a me</span><i class="sc-caret"></i>
+      </div>
+      <div class="sc-you">
+        <span class="sc-url" id="sd-url">iltuosito.it</span>
+        <b class="sc-name" data-fill="nome">Il tuo nome</b>
+        <span class="sc-stars"><span class="st">★★★★★</span> 4,9 · recensioni Google</span>
+        <span class="sc-actions"><em>Chiama</em><em>WhatsApp</em><em>Indicazioni</em></span>
+      </div>
+      <div class="sc-other"><span class="sc-url">altro-sito.it</span><i class="l w70"></i><i class="l w90 thin"></i></div>
+      <div class="sc-other"><span class="sc-url">un-altro.it</span><i class="l w55"></i><i class="l w80 thin"></i></div>
+      <p class="sc-cap">Così ti trova chi cerca quello che fai.</p>
+    </div>
+  </div>
+</header>
+
+<!-- ═══════════ LA PROVA ═══════════ -->
+<section class="sec" id="prova">
+  <div class="shell">
+    <div class="head">
+      <p class="kicker">Facciamo una prova</p>
+      <h2>Un cliente nuovo ti sta cercando adesso. <span class="mute">Chi trova?</span></h2>
+      <p class="sub">Quando ti consigliano qualcuno, prima di chiamarlo lo cerchi su internet. I tuoi clienti fanno lo stesso con te. Guardiamo insieme cosa trovano.</p>
+    </div>
+    <form class="try" id="try" autocomplete="off">
+      <label class="try-f"><span>Cosa fai</span><input id="try-what" placeholder="es. parrucchiere" required></label>
+      <label class="try-f"><span>Dove</span><input id="try-where" placeholder="es. Udine"></label>
+      <button type="submit" class="btn btn-ink" data-engine="google" data-cta="prova-google">Cerca su Google ↗</button>
+      <button type="button" class="btn btn-line" id="try-ai" data-cta="prova-chatgpt">Chiedi a ChatGPT ↗</button>
+    </form>
+    <div class="try-notes">
+      <p><b>Chi non ti trova, chiama un altro.</b> Non perché lavori peggio: perché non ti ha visto.</p>
+      <p><b>Se nessuno in zona si presenta bene online,</b> il primo che lo fa si prende le ricerche di tutti.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ PERCHÉ ═══════════ -->
+<section class="sec stone" id="perche">
+  <div class="shell">
+    <div class="head">
+      <p class="kicker">Cosa fa per te</p>
       <h2>Un sito che lavora per te, <span class="mute">anche quando hai chiuso.</span></h2>
     </div>
-
     <div class="why">
       <article class="why-card">
         <div class="vig vig-ai" aria-hidden="true">
           <p class="bub me" data-fill="ask">Chi mi consigli come parrucchiere qui vicino?</p>
-          <p class="bub ai">Ti consiglio <b data-fill="nome">il tuo nome</b>: ottime recensioni, prenoti online.</p>
+          <p class="bub ai">Ti consiglio <b data-fill="nome">il tuo nome</b>: ottime recensioni, e prenoti online.</p>
         </div>
         <h3>Ti trovano</h3>
-        <p>Su Google e quando chiedono a ChatGPT. Chi non ti trova, chiama un altro.</p>
+        <p>Su Google, su Maps e quando chiedono a ChatGPT. Il sito è preparato per farti trovare da chi cerca quello che fai, nella tua zona.</p>
       </article>
       <article class="why-card">
         <div class="vig vig-rev" aria-hidden="true">
-          <p class="rv-score">4,9</p>
-          <p class="rv-stars">★★★★★</p>
+          <p class="rv-score">4,9 <span class="rv-stars">★★★★★</span></p>
           <p class="rv-txt">«Professionali e gentilissimi. Torno sempre.»</p>
+          <p class="rv-who">Recensione Google</p>
         </div>
         <h3>Si fidano</h3>
-        <p>Un sito curato, con le tue recensioni, fa la prima impressione che ti meriti.</p>
+        <p>Chi riceve un passaparola, prima di chiamarti controlla online. Un sito curato, con le tue recensioni, fa capire subito quanto lavori bene.</p>
       </article>
       <article class="why-card">
         <div class="vig vig-night" aria-hidden="true">
@@ -154,20 +166,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <p class="nt"><b>Prenotazione</b>Sabato, ore 10:30</p>
           <p class="nt"><b>Dal sito</b>Nuova richiesta di preventivo</p>
         </div>
-        <h3>Lavora anche di sera</h3>
-        <p>Ti scrivono, prenotano, chiedono un preventivo. Tu rispondi quando puoi.</p>
+        <h3>Meno telefonate</h3>
+        <p>Orari, servizi e prezzi sono già lì. Ti scrivono su WhatsApp o prenotano da soli, anche la sera. Tu rispondi quando hai un momento.</p>
       </article>
     </div>
   </div>
 </section>
 
-<!-- ═══════════ 02 · ESEMPI ═══════════ -->
+<!-- ═══════════ ESEMPI ═══════════ -->
 <section class="sec dark" id="esempi">
   <div class="shell">
-    <div class="sec-head">
-      <span class="num">02</span>
-      <h2>Così ti vedranno <span class="mute">i tuoi clienti.</span></h2>
-      <p class="sec-sub">Scegli un'attività come la tua e sfoglia il sito, come farebbe chi ti cerca. Si apre a tutto schermo: puoi vederlo dal computer e dal telefono, e scoprire cosa è incluso e cosa è un extra.</p>
+    <div class="head">
+      <p class="kicker">Gli esempi</p>
+      <h2>Così ti vedranno <span class="gold">i tuoi clienti.</span></h2>
+      <p class="sub">Scegli un'attività come la tua e sfoglia il sito, come farebbe chi ti cerca. Si apre a tutto schermo: lo vedi dal computer e dal telefono, e scopri cosa è incluso e cosa è un extra.</p>
     </div>
     <div class="count">
       <p><b>6</b><span>siti di esempio</span></p>
@@ -175,105 +187,122 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <p><b>3</b><span>formati: One-Page, Completo, Negozio</span></p>
     </div>
     <div class="demos" id="demos">
-        <button type="button" class="dcard" data-site="parrucchiere" data-name="Atelier Chiara Hair" data-kind="One-Page" data-mods="Prenotazioni online|Promo che cambi tu" data-sector="parrucchiere parrucchiera estetista estetica salone barbiere" data-cta="esempio-parrucchiere">
-          <span class="dcard-img"><img src="media/esempi/demo-parrucchiere.jpg?v=4" alt="Anteprima del sito Atelier Chiara Hair" loading="lazy" width="960" height="600"></span>
-          <span class="dcard-body">
-            <span class="dcard-top"><b>Atelier Chiara Hair</b><small>Parrucchiere</small></span>
-            <span class="chips"><span class="base">One-Page</span><span>+ Prenotazioni online</span><span>+ Promo che cambi tu</span></span>
-            <span class="dcard-cta">Guarda il sito →</span>
-          </span>
-        </button>
-        <button type="button" class="dcard" data-site="trattoria" data-name="Trattoria Al Portico" data-kind="One-Page" data-mods="Menu con QR|Lingua inglese" data-sector="trattoria ristorante osteria pizzeria bar locanda" data-cta="esempio-trattoria">
-          <span class="dcard-img"><img src="media/esempi/demo-trattoria.jpg?v=4" alt="Anteprima del sito Trattoria Al Portico" loading="lazy" width="960" height="600"></span>
-          <span class="dcard-body">
-            <span class="dcard-top"><b>Trattoria Al Portico</b><small>Ristorante</small></span>
-            <span class="chips"><span class="base">One-Page</span><span>+ Menu con QR</span><span>+ Lingua inglese</span></span>
-            <span class="dcard-cta">Guarda il sito →</span>
-          </span>
-        </button>
-        <button type="button" class="dcard" data-site="studio-medico" data-name="Studio Medico Dott. Ferri" data-kind="Completo, 7 pagine" data-mods="Prenotazioni online|Blog" data-sector="studio medico dentista dentistico fisioterapista psicologo avvocato commercialista professionista" data-cta="esempio-studio-medico">
-          <span class="dcard-img"><img src="media/esempi/demo-studio-medico.jpg?v=4" alt="Anteprima del sito Studio Medico Dott. Ferri" loading="lazy" width="960" height="600"></span>
-          <span class="dcard-body">
-            <span class="dcard-top"><b>Studio Medico Dott. Ferri</b><small>Studio medico</small></span>
-            <span class="chips"><span class="base">Completo, 7 pagine</span><span>+ Prenotazioni online</span><span>+ Blog</span></span>
-            <span class="dcard-cta">Guarda il sito →</span>
-          </span>
-        </button>
-        <button type="button" class="dcard" data-site="impresa-edile" data-name="Rinaldi Costruzioni" data-kind="Completo" data-mods="Catalogo finiture|Collegamento al CRM" data-sector="impresa edile idraulico elettricista artigiano serramenti imbianchino" data-cta="esempio-impresa-edile">
-          <span class="dcard-img"><img src="media/esempi/demo-impresa-edile.jpg?v=4" alt="Anteprima del sito Rinaldi Costruzioni" loading="lazy" width="960" height="600"></span>
-          <span class="dcard-body">
-            <span class="dcard-top"><b>Rinaldi Costruzioni</b><small>Impresa edile</small></span>
-            <span class="chips"><span class="base">Completo</span><span>+ Catalogo finiture</span><span>+ Collegamento al CRM</span></span>
-            <span class="dcard-cta">Guarda il sito →</span>
-          </span>
-        </button>
-        <button type="button" class="dcard" data-site="cantina" data-name="Cantina Bortolin" data-kind="Negozio online" data-mods="30 prodotti|Lingua tedesca" data-sector="cantina vino vini agriturismo enoteca" data-cta="esempio-cantina">
-          <span class="dcard-img"><img src="media/esempi/demo-cantina.jpg?v=4" alt="Anteprima del sito Cantina Bortolin" loading="lazy" width="960" height="600"></span>
-          <span class="dcard-body">
-            <span class="dcard-top"><b>Cantina Bortolin</b><small>Cantina</small></span>
-            <span class="chips"><span class="base">Negozio online</span><span>+ 30 prodotti</span><span>+ Lingua tedesca</span></span>
-            <span class="dcard-cta">Guarda il sito →</span>
-          </span>
-        </button>
-        <button type="button" class="dcard" data-site="ceramiche" data-name="Laguna Ceramiche" data-kind="Negozio online" data-mods="Collegamento al gestionale" data-sector="ceramiche laboratorio negozio bottega artigianato" data-cta="esempio-ceramiche">
-          <span class="dcard-img"><img src="media/esempi/demo-ceramiche.jpg?v=4" alt="Anteprima del sito Laguna Ceramiche" loading="lazy" width="960" height="600"></span>
-          <span class="dcard-body">
-            <span class="dcard-top"><b>Laguna Ceramiche</b><small>Laboratorio</small></span>
-            <span class="chips"><span class="base">Negozio online</span><span>+ Collegamento al gestionale</span></span>
-            <span class="dcard-cta">Guarda il sito →</span>
-          </span>
-        </button>
+      <button type="button" class="dcard" data-site="parrucchiere" data-name="Atelier Chiara Hair" data-kind="One-Page" data-mods="Prenotazioni online|Promo che cambi tu" data-sector="parrucchiere parrucchiera estetista estetica salone barbiere" data-cta="esempio-parrucchiere">
+        <span class="dcard-img"><img src="media/esempi/demo-parrucchiere.jpg?v=4" alt="Anteprima del sito Atelier Chiara Hair" loading="lazy" width="960" height="600"></span>
+        <span class="dcard-body">
+          <span class="dcard-top"><b>Atelier Chiara Hair</b><small>Parrucchiere</small></span>
+          <span class="chips"><span class="base">One-Page</span><span>+ Prenotazioni online</span><span>+ Promo che cambi tu</span></span>
+          <span class="dcard-cta">Guarda il sito →</span>
+        </span>
+      </button>
+      <button type="button" class="dcard" data-site="trattoria" data-name="Trattoria Al Portico" data-kind="One-Page" data-mods="Menu con QR|Lingua inglese" data-sector="trattoria ristorante osteria pizzeria bar locanda" data-cta="esempio-trattoria">
+        <span class="dcard-img"><img src="media/esempi/demo-trattoria.jpg?v=4" alt="Anteprima del sito Trattoria Al Portico" loading="lazy" width="960" height="600"></span>
+        <span class="dcard-body">
+          <span class="dcard-top"><b>Trattoria Al Portico</b><small>Ristorante</small></span>
+          <span class="chips"><span class="base">One-Page</span><span>+ Menu con QR</span><span>+ Lingua inglese</span></span>
+          <span class="dcard-cta">Guarda il sito →</span>
+        </span>
+      </button>
+      <button type="button" class="dcard" data-site="studio-medico" data-name="Studio Medico Dott. Ferri" data-kind="Completo, 7 pagine" data-mods="Prenotazioni online|Blog" data-sector="studio medico dentista dentistico fisioterapista psicologo avvocato commercialista professionista" data-cta="esempio-studio-medico">
+        <span class="dcard-img"><img src="media/esempi/demo-studio-medico.jpg?v=4" alt="Anteprima del sito Studio Medico Dott. Ferri" loading="lazy" width="960" height="600"></span>
+        <span class="dcard-body">
+          <span class="dcard-top"><b>Studio Medico Dott. Ferri</b><small>Studio medico</small></span>
+          <span class="chips"><span class="base">Completo, 7 pagine</span><span>+ Prenotazioni online</span><span>+ Blog</span></span>
+          <span class="dcard-cta">Guarda il sito →</span>
+        </span>
+      </button>
+      <button type="button" class="dcard" data-site="impresa-edile" data-name="Rinaldi Costruzioni" data-kind="Completo" data-mods="Catalogo finiture|Collegamento al CRM" data-sector="impresa edile idraulico elettricista artigiano serramenti imbianchino" data-cta="esempio-impresa-edile">
+        <span class="dcard-img"><img src="media/esempi/demo-impresa-edile.jpg?v=4" alt="Anteprima del sito Rinaldi Costruzioni" loading="lazy" width="960" height="600"></span>
+        <span class="dcard-body">
+          <span class="dcard-top"><b>Rinaldi Costruzioni</b><small>Impresa edile</small></span>
+          <span class="chips"><span class="base">Completo</span><span>+ Catalogo finiture</span><span>+ Collegamento al CRM</span></span>
+          <span class="dcard-cta">Guarda il sito →</span>
+        </span>
+      </button>
+      <button type="button" class="dcard" data-site="cantina" data-name="Cantina Bortolin" data-kind="Negozio online" data-mods="30 prodotti|Lingua tedesca" data-sector="cantina vino vini agriturismo enoteca" data-cta="esempio-cantina">
+        <span class="dcard-img"><img src="media/esempi/demo-cantina.jpg?v=4" alt="Anteprima del sito Cantina Bortolin" loading="lazy" width="960" height="600"></span>
+        <span class="dcard-body">
+          <span class="dcard-top"><b>Cantina Bortolin</b><small>Cantina</small></span>
+          <span class="chips"><span class="base">Negozio online</span><span>+ 30 prodotti</span><span>+ Lingua tedesca</span></span>
+          <span class="dcard-cta">Guarda il sito →</span>
+        </span>
+      </button>
+      <button type="button" class="dcard" data-site="ceramiche" data-name="Laguna Ceramiche" data-kind="Negozio online" data-mods="Collegamento al gestionale" data-sector="ceramiche laboratorio negozio bottega artigianato" data-cta="esempio-ceramiche">
+        <span class="dcard-img"><img src="media/esempi/demo-ceramiche.jpg?v=4" alt="Anteprima del sito Laguna Ceramiche" loading="lazy" width="960" height="600"></span>
+        <span class="dcard-body">
+          <span class="dcard-top"><b>Laguna Ceramiche</b><small>Laboratorio</small></span>
+          <span class="chips"><span class="base">Negozio online</span><span>+ Collegamento al gestionale</span></span>
+          <span class="dcard-cta">Guarda il sito →</span>
+        </span>
+      </button>
     </div>
     <p class="fine">Attività di esempio: nomi, foto e prezzi sono inventati. Il tuo sito lo vedi completo, con i tuoi contenuti, prima di firmare.</p>
   </div>
 </section>
 
-<!-- ═══════════ 03 · IL LAVORO ═══════════ -->
-<section class="sec stone" id="lavoro">
+<!-- ═══════════ NON DEVI FARE NIENTE ═══════════ -->
+<section class="sec" id="lavoro">
   <div class="shell">
-    <div class="sec-head">
-      <span class="num">03</span>
-      <h2>Tu non devi fare <span class="accent">niente.</span></h2>
-      <p class="sec-sub">A te tocca solo dirci se ti piace.</p>
+    <div class="head">
+      <p class="kicker">Il lavoro</p>
+      <h2>Tu non devi fare <span class="coral">niente.</span></h2>
+      <p class="sub">A te tocca solo dirci se ti piace. Bastano venti minuti insieme: le domande giuste, qualche foto col telefono, e il resto lo facciamo noi.</p>
     </div>
     <ul class="swap" id="swap">
       <li><s>Scrivere i testi</s><span>Li scriviamo noi, da quello che ci racconti.</span></li>
-      <li><s>Cercare le foto</s><span>Le facciamo noi, anche col telefono, durante l'incontro.</span></li>
+      <li><s>Cercare le foto</s><span>Le facciamo durante l'incontro, oppure le scegliamo noi.</span></li>
       <li><s>Imparare un programma</s><span>Al sito pensiamo noi: online, sicuro, veloce.</span></li>
       <li><s>Capire Google</s><span>Lo prepariamo per farti trovare, anche dagli assistenti AI.</span></li>
     </ul>
   </div>
 </section>
 
-<!-- ═══════════ 04 · COME FUNZIONA ═══════════ -->
-<section class="sec" id="come">
+<!-- ═══════════ COME FUNZIONA ═══════════ -->
+<section class="sec stone" id="come">
   <div class="shell">
-    <div class="sec-head">
-      <span class="num">04</span>
-      <h2>Prima lo vedi. <span class="accent">Poi decidi.</span></h2>
-      <p class="sec-sub">Se non ti piace, non ci perdi niente.</p>
+    <div class="head">
+      <p class="kicker">Come funziona</p>
+      <h2>Prima lo vedi. <span class="coral">Poi decidi.</span></h2>
+      <p class="sub">Nessuno dovrebbe comprare un sito immaginandolo. Per questo te lo facciamo vedere completo, con i tuoi contenuti, prima di chiederti qualsiasi cosa.</p>
     </div>
     <ol class="steps">
-      <li><span class="st-n">1</span><p class="st-when">Oggi</p><h3>Ci racconti la tua attività</h3><p>Venti minuti, di persona. Raccogliamo foto e informazioni.</p></li>
-      <li><span class="st-n">2</span><p class="st-when">Entro 5 giorni lavorativi</p><h3>Prepariamo il tuo sito</h3><p>Completo, con il tuo nome, il tuo logo e le tue foto.</p></li>
-      <li><span class="st-n">3</span><p class="st-when">Ci rivediamo</p><h3>Lo sfogli e decidi</h3><p>Se ti piace firmi, e in pochi giorni è online.</p></li>
+      <li><span class="st-n">1</span><p class="st-when">Oggi</p><h3>Ci racconti la tua attività</h3><p>Venti minuti, di persona. Raccogliamo informazioni e qualche foto.</p></li>
+      <li><span class="st-n">2</span><p class="st-when">Entro 5 giorni lavorativi</p><h3>Prepariamo il tuo sito</h3><p>Completo, con il tuo nome, il tuo logo e le tue foto. Senza impegno.</p></li>
+      <li><span class="st-n">3</span><p class="st-when">Ci rivediamo</p><h3>Lo sfogli e decidi</h3><p>Se ti piace firmi, e in pochi giorni è online. Se no, non ci perdi niente.</p></li>
     </ol>
     <div class="facts">
-      <p><b>4 giorni</b><span>One-Page online</span></p>
-      <p><b>7 giorni</b><span>sito Completo online</span></p>
-      <p><b>15 giorni</b><span>negozio online</span></p>
-      <p><b>2 giri</b><span>di modifiche, scritte da te sul sito</span></p>
+      <p><b>4 giorni</b><span>e il One-Page è online</span></p>
+      <p><b>7 giorni</b><span>per il sito Completo</span></p>
+      <p><b>15 giorni</b><span>per il negozio online</span></p>
+      <p><b>2 giri</b><span>di modifiche: le scrivi tu, direttamente sul sito</span></p>
     </div>
-    <p class="fine dark-fine">Giorni lavorativi, da quando abbiamo firma, logo, foto e contatti.</p>
+    <p class="fine">Giorni lavorativi, da quando abbiamo firma, logo, foto e contatti.</p>
   </div>
 </section>
 
-<!-- ═══════════ 05 · PREZZI ═══════════ -->
+<!-- ═══════════ È TUO ═══════════ -->
+<section class="sec" id="tuo">
+  <div class="shell own">
+    <div class="own-head">
+      <p class="kicker">Niente affitti</p>
+      <h2>Lo paghi una volta. <span class="coral">È tuo.</span></h2>
+      <p class="own-quote">Facebook è una casa in affitto: le regole le decide qualcun altro. Il sito è casa tua.</p>
+    </div>
+    <div class="own-list">
+      <div><b>Nessun canone sul sito</b><p>Niente rate mensili per una cosa che non è tua.</p></div>
+      <div><b>Dominio e hosting intestati a te</b><p>60 € + IVA il primo anno, poi 90 € l'anno, con una casella email. Se li hai già, non paghi niente.</p></div>
+      <div><b>Libero di cambiare</b><p>Se un giorno vuoi andare altrove, ti diamo file e dominio. Gratis.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ PREZZI ═══════════ -->
 <section class="sec stone" id="prezzi">
   <div class="shell">
-    <div class="sec-head">
-      <span class="num">05</span>
-      <h2>Prezzi fissi. <span class="mute">Lo paghi una volta, ed è tuo.</span></h2>
+    <div class="head">
+      <p class="kicker">Prezzi</p>
+      <h2>Prezzi fissi, scritti qui. <span class="mute">Senza sorprese.</span></h2>
+      <p class="sub">Scegli il formato e aggiungi solo quello che ti serve: il totale si aggiorna subito.</p>
     </div>
 
     <div class="formats" role="radiogroup" aria-label="Formato">
@@ -337,60 +366,59 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <p class="r-rate" id="r-rate">oppure 3 rate da circa 447 €</p>
         <div class="r-sep"></div>
         <p class="r-line" id="r-host">Poi solo dominio e hosting: 60 € + IVA il primo anno, 90 € dal secondo.</p>
+        <p class="r-q">Quanto vale per te un cliente nuovo? Spesso ne bastano pochi per ripagare il sito.</p>
         <p class="r-small">Metà alla firma, metà quando è online. Oppure 3 rate, con carta o Klarna.</p>
       </div>
     </div>
 
     <div class="included">
-      <div>
-        <p class="inc-t">Sempre dentro</p>
-        <ul class="checks">
-          <li>Design su misura, perfetto sul telefono</li>
-          <li>Testi scritti da noi</li>
-          <li>Foto tue, oppure scelte da noi</li>
-          <li>WhatsApp, chiamata, mappa, recensioni</li>
-          <li>Pronto per Google e per gli assistenti AI</li>
-          <li>Veloce e sempre online</li>
-          <li>Privacy, cookie e banner dei consensi</li>
-          <li>2 giri di modifiche</li>
-        </ul>
-      </div>
-      <div class="own">
-        <p class="inc-t">Dopo</p>
-        <p class="own-big">Nessun canone sul sito.</p>
-        <p>Solo dominio e hosting, intestati a te: <b>60 € + IVA</b> il primo anno, poi <b>90 € + IVA</b> l'anno, con una casella email inclusa. Se li hai già, non paghi niente.</p>
-        <p>Se un giorno vuoi cambiare, ti diamo file e dominio. Gratis.</p>
-      </div>
+      <p class="inc-t">Sempre incluso</p>
+      <ul class="checks">
+        <li>Design su misura, perfetto sul telefono</li>
+        <li>Testi scritti da noi</li>
+        <li>Foto tue, oppure scelte da noi</li>
+        <li>WhatsApp, chiamata, mappa, recensioni</li>
+        <li>Pronto per Google e per gli assistenti AI</li>
+        <li>Veloce e sempre online</li>
+        <li>Privacy, cookie e banner dei consensi</li>
+        <li>2 giri di modifiche</li>
+      </ul>
     </div>
   </div>
 </section>
 
-<!-- ═══════════ 06 · DOMANDE ═══════════ -->
+<!-- ═══════════ DOMANDE ═══════════ -->
 <section class="sec" id="domande">
   <div class="shell">
-    <div class="sec-head">
-      <span class="num">06</span>
+    <div class="head">
+      <p class="kicker">Domande</p>
       <h2>Le domande <span class="mute">che ci fanno tutti.</span></h2>
     </div>
     <div class="qa">
       <div class="qa-list" role="tablist" aria-label="Domande">
-        <button class="qchip" role="tab" aria-selected="true">Ho già Facebook, mi serve?</button>
+        <button class="qchip" role="tab" aria-selected="true">Costa troppo per me</button>
+        <button class="qchip" role="tab" aria-selected="false">Ho già Facebook, mi serve?</button>
         <button class="qchip" role="tab" aria-selected="false">E se poi non mi piace?</button>
         <button class="qchip" role="tab" aria-selected="false">Non ho tempo</button>
+        <button class="qchip" role="tab" aria-selected="false">Ci devo pensare</button>
         <button class="qchip" role="tab" aria-selected="false">Ho già un sito</button>
-        <button class="qchip" role="tab" aria-selected="false">Sarò primo su Google?</button>
+        <button class="qchip" role="tab" aria-selected="false">Me lo fa mio nipote</button>
         <button class="qchip" role="tab" aria-selected="false">Ho visto siti a 400 €</button>
+        <button class="qchip" role="tab" aria-selected="false">Sarò primo su Google?</button>
         <button class="qchip" role="tab" aria-selected="false">Posso modificarlo da solo?</button>
         <button class="qchip" role="tab" aria-selected="false">E dopo, se ho bisogno?</button>
       </div>
       <div class="qa-answer" id="qa-answer" aria-live="polite"></div>
       <template id="answers">
+        <p>Quanto vale per te un cliente nuovo? Spesso ne bastano pochi per ripagare il sito. E <b>lo paghi una volta sola</b>, anche in tre rate: poi è tuo, senza canoni.</p>
         <p>Facebook è una casa in affitto: le regole le decide qualcun altro, e chi cerca su Google non ti trova lì. <b>Il sito è casa tua</b>, e Facebook lo colleghiamo.</p>
-        <p>Lo vedi <b>prima di firmare</b>. E dopo ci sono due giri di modifiche: le scrivi direttamente sul sito, nel punto esatto, e noi le facciamo.</p>
-        <p>Proprio per questo: <b>ci bastano venti minuti.</b> Il resto lo facciamo noi.</p>
-        <p>Guardiamolo insieme sul telefono. Se si vede bene e ti trovano su Google, <b>non ti serve niente.</b></p>
-        <p>Nessuno può promettertelo onestamente. <b>Noi lo costruiamo nel modo giusto</b>, per Google e per gli assistenti AI. Il resto lo fanno il tuo lavoro e il tempo.</p>
-        <p>Esistono. Di solito i testi li scrivi tu, il modello è uguale per tutti e spesso c'è un canone. <b>Qui vedi il tuo sito prima di pagare</b>, e non devi fare niente.</p>
+        <p>Lo vedi <b>prima di firmare</b>, completo. E dopo ci sono due giri di modifiche: le scrivi direttamente sul sito, nel punto esatto, e noi le facciamo.</p>
+        <p>Proprio per questo: <b>ci bastano venti minuti.</b> I testi li scriviamo noi, le foto le facciamo durante l'incontro. A te tocca solo dirci se ti piace.</p>
+        <p>Certo. <b>Ti prepariamo il tuo sito</b>, così ci pensi guardando una cosa vera e non immaginandola. Lo guardiamo insieme, e poi decidi con calma.</p>
+        <p>Guardiamolo insieme sul telefono. Se si vede bene e ti trovano su Google, <b>non ti serve niente.</b> Se no, ti facciamo vedere come potrebbe essere.</p>
+        <p>Ottimo, se ha tempo. Ti chiedo solo: <b>tra un anno chi lo aggiorna</b>, e chi risponde se smette di funzionare? Con noi hai uno studio che ti risponde, dal lunedì al venerdì.</p>
+        <p>Esistono. Di solito i testi li scrivi tu, il modello è uguale per tutti e spesso c'è un canone mensile. <b>Qui vedi il tuo sito prima di pagare</b>, non devi fare niente e poi è tuo.</p>
+        <p>Nessuno può promettertelo onestamente, e diffida di chi lo fa. <b>Noi lo costruiamo nel modo giusto</b>, per Google e per gli assistenti AI. Il resto lo fanno il tuo lavoro e il tempo.</p>
         <p>Con i moduli Promo e Blog, <b>offerte e articoli li pubblichi tu</b>, anche dal telefono. Il negozio online lo gestisci tu. Per il resto ci scrivi e ti facciamo un preventivo.</p>
         <p>Ci scrivi su WhatsApp o ci chiami: <b>ti rispondiamo noi</b>, dal lunedì al venerdì, dalle 9 alle 18.</p>
       </template>
@@ -398,34 +426,37 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   </div>
 </section>
 
-<!-- ═══════════ 07 · CHI SIAMO ═══════════ -->
+<!-- ═══════════ CHI SIAMO ═══════════ -->
 <section class="sec blue" id="noi">
   <div class="shell">
-    <div class="sec-head">
-      <span class="num">07</span>
-      <h2>inMetamorfosi. <span class="mute">Uno studio vero, dal 2015.</span></h2>
-      <p class="sec-sub">Studio digitale di Portogruaro. Siti, immagine, social e pubblicità per imprenditori e attività come la tua. Quando ci scrivi, ti risponde chi segue il tuo sito, dal lunedì al venerdì.</p>
+    <div class="head">
+      <p class="kicker">Chi siamo</p>
+      <h2>inMetamorfosi. <span class="gold">Uno studio vero, dal 2015.</span></h2>
+      <p class="sub">Studio digitale di Portogruaro: siti, immagine, social e pubblicità per imprenditori e attività come la tua. Quando ci scrivi, ti risponde chi segue il tuo sito.</p>
     </div>
     <div class="quotes">
-      <figure><blockquote>«Ho provato altre agenzie prima, ma nessuna lavorava con questa cura.»</blockquote><figcaption>Diego Bucciol<span>e-commerce</span></figcaption></figure>
-      <figure><blockquote>«Il nuovo sito ha completamente cambiato la percezione della mia attività online.»</blockquote><figcaption>Paola Sbaiz<span>imprenditrice</span></figcaption></figure>
-      <figure><blockquote>«Hanno trasformato il mio sito in uno strumento di lavoro vero.»</blockquote><figcaption>Massimo Petracca<span>imprenditore</span></figcaption></figure>
+      <figure><p class="q-stars">★★★★★</p><blockquote>«Team professionale e molto disponibile. Hanno trasformato il mio sito in uno strumento di lavoro vero. Risultati visibili già dal primo mese.»</blockquote><figcaption>Massimo Petracca<span>Imprenditore</span></figcaption></figure>
+      <figure><p class="q-stars">★★★★★</p><blockquote>«Serietà, velocità e creatività. Hanno capito esattamente cosa volevo e lo hanno realizzato superando le mie aspettative.»</blockquote><figcaption>Anna Barboni<span>Libera professionista</span></figcaption></figure>
+      <figure><p class="q-stars">★★★★★</p><blockquote>«Professionali, puntuali e creativi. Il nuovo sito ha completamente cambiato la percezione della mia attività online. Grazie mille!»</blockquote><figcaption>Paola Sbaiz<span>Imprenditrice</span></figcaption></figure>
+      <figure><p class="q-stars">★★★★★</p><blockquote>«Collaborazione eccellente. Sono sempre aggiornati sulle ultime tendenze e sanno come applicarle al mio business in modo pratico.»</blockquote><figcaption>Francesco Colonna<span>Ristoratore</span></figcaption></figure>
+      <figure><p class="q-stars">★★★★★</p><blockquote>«Ho provato altre agenzie prima, ma nessuna lavorava con questa cura e attenzione ai dettagli. Il mio e-commerce ha triplicato le vendite.»</blockquote><figcaption>Diego Bucciol<span>E-commerce</span></figcaption></figure>
+      <figure><p class="q-stars">★★★★★</p><blockquote>«Finalmente un'agenzia che mantiene le promesse. Le campagne hanno portato contatti reali e qualificati. Consigliatissimi!»</blockquote><figcaption>Geom. Andrea Manfron<span>Geometra</span></figcaption></figure>
     </div>
   </div>
 </section>
 
-<!-- ═══════════ CONTATTI ═══════════ -->
-<section class="sec accent-bg" id="contatti">
+<!-- ═══════════ CHIUSURA ═══════════ -->
+<section class="sec coral-bg" id="contatti">
   <div class="shell close">
-    <p class="eyebrow light">Facciamo così</p>
+    <p class="kicker">Facciamo così</p>
     <h2 class="close-h">Ti prepariamo il tuo sito.</h2>
     <p class="close-sub">Con il tuo nome e le tue foto. Lo guardiamo insieme, e se non ti piace non ci perdi niente.</p>
     <div class="close-actions">
-      <a class="btn btn-ink" href="https://wa.me/393888174824?text=Ciao%2C%20vorrei%20vedere%20il%20mio%20sito" target="_blank" rel="noopener" data-cta="whatsapp">Scrivici su WhatsApp <span aria-hidden="true">→</span></a>
+      <a class="btn btn-gold" href="https://wa.me/393888174824?text=Ciao%2C%20vorrei%20vedere%20il%20mio%20sito" target="_blank" rel="noopener" data-cta="whatsapp">Scrivici su WhatsApp →</a>
       <a class="btn btn-line" href="tel:+393888174824" data-cta="telefono">388 817 4824</a>
       <a class="btn btn-line" href="mailto:info@inmetamorfosi.com?subject=Il%20mio%20sito" data-cta="email">info@inmetamorfosi.com</a>
     </div>
-    <a class="more" href="dettagli.html" data-cta="dettagli">Tutti i dettagli, da leggere con calma <span aria-hidden="true">→</span></a>
+    <p class="close-note">Rispondiamo dal lunedì al venerdì, dalle 9 alle 18. <a class="more" href="dettagli.html" data-cta="dettagli">Tutti i dettagli, da leggere con calma →</a></p>
   </div>
 </section>
 
@@ -443,6 +474,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </p>
   </div>
 </footer>
+
+<!-- pulsante fisso su telefono, per chi apre il link da solo -->
+<a class="mcta" id="mcta" href="https://wa.me/393888174824?text=Ciao%2C%20vorrei%20vedere%20il%20mio%20sito" target="_blank" rel="noopener" data-cta="whatsapp-fisso">Scrivici su WhatsApp</a>
 
 <!-- ═══════════ SITO A TUTTO SCHERMO ═══════════ -->
 <div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-labelledby="lb-name">
@@ -480,6 +514,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   </form>
 </div>
 
-<script src="js/sito.js?v=13"></script>
+<script src="js/sito.js?v=32"></script>
 </body>
 </html>
