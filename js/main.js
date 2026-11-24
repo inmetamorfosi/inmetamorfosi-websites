@@ -56,7 +56,7 @@
 
   /* ---------- configuratore preventivo (listino IVA esclusa) ---------- */
   var PRICE = { one: 1100, full: 2200, shop: 2500 };
-  var NAME = { one: "Sito One-Page", full: "Sito Completo", shop: "E-commerce" };
+  var NAME = { one: "Sito monopagina", full: "Sito Completo", shop: "E-commerce" };
   var EXTRA_PAGE = 150;
   var IVA = 0.22;
 

@@ -4,10 +4,10 @@
 
   /* ---------- personalizzazione: nome, settore, città ---------- */
   var KEY = "imw-cliente";
-  var who = { nome: "", settore: "", citta: "" };
+  var who = { nome: "", settore: "", citta: "", ref: "", tel: "" };
   try { who = Object.assign(who, JSON.parse(localStorage.getItem(KEY) || "{}")); } catch (e) {}
   var qs = new URLSearchParams(location.search);
-  ["nome", "settore", "citta"].forEach(function (k) { if (qs.get(k)) who[k] = qs.get(k).trim(); });
+  ["nome", "settore", "citta", "ref", "tel"].forEach(function (k) { if (qs.get(k)) who[k] = qs.get(k).trim(); });
   if (qs.get("settore")) who.settore = who.settore.toLowerCase();
 
   function save() { try { localStorage.setItem(KEY, JSON.stringify(who)); } catch (e) {} }
@@ -42,7 +42,33 @@
         .forEach(function (c) { grid.appendChild(c); });
       if (pick) { pick.classList.add("match"); grid.insertBefore(pick, grid.firstChild); }
     }
+    applyRef();
     playSearch(true);
+  }
+
+  /* ---------- il commerciale di riferimento: nome e WhatsApp nei contatti ---------- */
+  var STUDIO_WA = "393888174824", WA_TEXT = "Ciao, vorrei informazioni per il mio sito";
+  function waNumber(t) {
+    var d = (t || "").replace(/\D/g, "");
+    if (d.length < 8) return "";
+    if (d.indexOf("00") === 0) d = d.slice(2);
+    if (d.charAt(0) === "3" && d.length <= 10) d = "39" + d; // cellulare italiano senza prefisso
+    return d;
+  }
+  function applyRef() {
+    var num = waNumber(who.tel), name = who.ref;
+    var refName = document.getElementById("ref-name");
+    if (refName) refName.textContent = name || "Il commerciale che ti ha presentato questa pagina";
+    document.querySelectorAll("[data-wa]").forEach(function (a) {
+      a.setAttribute("href", "https://wa.me/" + (num || STUDIO_WA) + "?text=" + encodeURIComponent(WA_TEXT));
+      var label = num && name ? "Scrivi a " + name + " su WhatsApp" : "Scrivici su WhatsApp";
+      a.textContent = label + (a.hasAttribute("data-wa-arrow") ? " →" : "");
+    });
+    var tel = document.getElementById("ref-tel");
+    if (tel) {
+      tel.hidden = !num;
+      if (num) { tel.setAttribute("href", "tel:+" + num); tel.textContent = name ? "Chiama " + name : "Chiama"; }
+    }
   }
 
   /* ---------- apertura: la ricerca si scrive da sola, poi compare il sito del cliente ---------- */
@@ -222,8 +248,8 @@
     rGross.textContent = eur(gross) + " con l'IVA";
     rRate.textContent = "oppure 3 rate da circa " + eur(Math.round(gross / 3));
     rHost.textContent = fmt === "shop"
-      ? "Poi dominio ed email: 60 € + IVA il primo anno, 90 € dal secondo. Più Shopify, circa 39 € al mese."
-      : "Poi solo dominio e hosting: 60 € + IVA il primo anno, 90 € dal secondo.";
+      ? "Poi dominio ed email, poche decine di euro l'anno, intestati a te. Più l'abbonamento a Shopify, circa 39 € al mese."
+      : "Poi solo dominio e hosting: poche decine di euro l'anno, intestati a te.";
     if (last !== null && last !== net) { var t = rNet.parentNode; t.classList.remove("bump"); void t.offsetWidth; t.classList.add("bump"); }
     last = net;
   }
@@ -254,7 +280,7 @@
   /* ---------- pannello del venditore ---------- */
   var seller = document.getElementById("seller"), form = document.getElementById("seller-form");
   document.getElementById("seller-open").addEventListener("click", function () {
-    form.nome.value = who.nome; form.settore.value = who.settore; form.citta.value = who.citta;
+    form.nome.value = who.nome; form.settore.value = who.settore; form.citta.value = who.citta; form.ref.value = who.ref; form.tel.value = who.tel;
     seller.hidden = false;
     setTimeout(function () { form.nome.focus(); }, 50);
   });
@@ -262,11 +288,11 @@
   seller.addEventListener("click", function (e) { if (e.target === seller) seller.hidden = true; });
   form.addEventListener("submit", function (e) {
     e.preventDefault();
-    who = { nome: form.nome.value.trim(), settore: form.settore.value.trim().toLowerCase(), citta: form.citta.value.trim() };
+    who = { nome: form.nome.value.trim(), settore: form.settore.value.trim().toLowerCase(), citta: form.citta.value.trim(), ref: form.ref.value.trim(), tel: form.tel.value.trim() };
     save(); seller.hidden = true; window.scrollTo({ top: 0, behavior: "smooth" }); applyWho();
   });
   document.getElementById("seller-reset").addEventListener("click", function () {
-    who = { nome: "", settore: "", citta: "" }; form.reset(); save(); applyWho();
+    who = { nome: "", settore: "", citta: "", ref: "", tel: "" }; form.reset(); save(); applyWho();
   });
 
   applyWho();
