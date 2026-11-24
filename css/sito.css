@@ -461,7 +461,6 @@ body.lb-open { overflow: hidden; }
 .faq p { padding: 0 22px 20px; color: #4a4a47; max-width: 70ch; }
 
 /* pulsante fisso su telefono */
-.mcta { display: none; }
 
 /* ═══════════ PANNELLO DEL VENDITORE ═══════════ */
 .seller { position: fixed; inset: 0; z-index: 99; background: rgba(29,29,27,.6); backdrop-filter: blur(6px); display: grid; place-items: center; padding: 20px; }
@@ -539,9 +538,6 @@ body.lb-open { overflow: hidden; }
   .lb-stage { padding: 10px 10px 12px; }
   .lb.is-mobile .lb-screen { aspect-ratio: auto; width: 100%; border-radius: 12px; box-shadow: none; }
   .lb-nav { width: 40px; height: 40px; background: rgba(29,29,27,.55); }
-  .mcta { display: flex; position: fixed; left: 14px; right: 14px; bottom: calc(14px + env(safe-area-inset-bottom)); z-index: 50; min-height: 54px; align-items: center; justify-content: center; border-radius: 999px; background: #25D366; color: #fff; font-weight: 800; text-decoration: none; box-shadow: 0 12px 30px rgba(0,0,0,.25); transform: translateY(140%); transition: transform .3s var(--ease); }
-  .mcta.on { transform: none; }
-  .foot { padding-bottom: calc(96px + env(safe-area-inset-bottom)); }
 }
 
 /* ═══════════ TELEFONI PICCOLI ═══════════ */

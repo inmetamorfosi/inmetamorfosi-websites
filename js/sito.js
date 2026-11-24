@@ -374,17 +374,6 @@
     if (dc) { open(dc); if (qs.get("vista") === "mobile") setView("mobile"); }
   }
 
-  /* ---------- pulsante WhatsApp fisso su telefono ---------- */
-  var mcta = document.getElementById("mcta"), heroEl = document.getElementById("inizio"), closeEl = document.getElementById("contatti");
-  if (mcta && heroEl && closeEl) {
-    var mUpdate = function () {
-      var past = window.scrollY > heroEl.offsetHeight * 0.8;
-      var atClose = closeEl.getBoundingClientRect().top < window.innerHeight * 0.85;
-      mcta.classList.toggle("on", past && !atClose);
-    };
-    window.addEventListener("scroll", mUpdate, { passive: true });
-    mUpdate();
-  }
 
   /* ---------- tracking ---------- */
   document.querySelectorAll("[data-cta]").forEach(function (el) {
