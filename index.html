@@ -52,7 +52,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Strichpunkt+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/sito.css?v=61">
+<link rel="stylesheet" href="css/sito.css?v=72">
 <link rel="icon" href="media/logo-inmetamorfosi.svg" type="image/svg+xml">
 </head>
 <body>
@@ -70,7 +70,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <a href="#domande">Dubbi</a>
       <a href="#noi">Chi siamo</a>
     </div>
-    <a href="#contatti" class="btn btn-coral btn-sm nav-cta" data-cta="nav">Scrivici</a>
+    <a href="#prezzi" class="btn btn-coral btn-sm nav-cta" data-cta="nav-preventivo">Il tuo preventivo</a>
   </div>
 </nav>
 
@@ -85,7 +85,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <p class="lede">Ci racconti la tua attività: da lì scriviamo i testi, sistemiamo le tue foto e costruiamo il sito. Tu lo guardi, ci dici cosa cambiare e va online. A prezzo fisso, ed è tuo.</p>
       <div class="hero-ctas">
         <a href="#esempi" class="btn btn-coral" data-cta="hero-esempi">Guarda gli esempi</a>
-        <a href="https://wa.me/393888174824?text=Ciao%2C%20vorrei%20informazioni%20per%20il%20mio%20sito" target="_blank" rel="noopener" class="btn btn-line" data-cta="hero-whatsapp" data-wa>Scrivici su WhatsApp</a>
+        <a href="#come" class="btn btn-line" data-cta="hero-come">Come funziona</a>
       </div>
       <ul class="proofs">
         <li><b>Su misura</b><span>per la tua attività</span></li>
@@ -101,9 +101,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <span class="show-dot" aria-hidden="true"></span>
         <span class="lap">
           <span class="lap-bar"><i></i><i></i><i></i><span id="peek-url">atelierchiarahair.it</span></span>
-          <span class="lap-screen"><img id="peek-desk" src="media/esempi/alto-parrucchiere.jpg" alt="" width="960" height="2025"></span>
+          <span class="lap-screen"><img id="peek-desk" src="media/esempi/alto-parrucchiere.jpg" alt="" width="960" height="2025" decoding="async"></span>
         </span>
-        <span class="tel"><span class="tel-screen"><img id="peek-mob" src="media/esempi/tel-parrucchiere.jpg" alt="" width="390" height="2500"></span></span>
+        <span class="tel"><span class="tel-screen"><img id="peek-mob" src="media/esempi/tel-parrucchiere.jpg" alt="" width="390" height="2500" decoding="async"></span></span>
         <span class="chip c1" aria-hidden="true"><b>Nuova prenotazione</b>Sabato, ore 10:30</span>
         <span class="chip c2" aria-hidden="true"><b>WhatsApp</b>Avete posto stasera?</span>
         <span class="seal" aria-hidden="true"><svg viewBox="0 0 120 120"><defs><path id="seal-p" d="M60,60 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0"/></defs><text><textPath href="#seal-p">SU MISURA · PREZZO FISSO · È TUO · </textPath></text></svg></span>
@@ -348,17 +348,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           </select>
         </div>
         <div class="needs" data-for="site">
-          <label class="need"><input type="checkbox" value="300"><span><b>Il telefono non ti dà tregua?</b><small>Prenotazioni online</small></span><em>300 €</em></label>
-          <label class="need"><input type="checkbox" value="200"><span><b>Hai clienti stranieri?</b><small>Il sito in un'altra lingua</small></span><em>200 €</em></label>
-          <label class="need"><input type="checkbox" value="150"><span><b>Menu o listino che cambiano?</b><small>Menu o listino con QR</small></span><em>150 €</em></label>
-          <label class="need"><input type="checkbox" value="250"><span><b>Fai offerte e promozioni?</b><small>Promo che cambi tu</small></span><em>250 €</em></label>
-          <label class="need"><input type="checkbox" value="450"><span><b>Hai cose da raccontare?</b><small>Blog che aggiorni tu</small></span><em>450 €</em></label>
-          <label class="need"><input type="checkbox" value="400"><span><b>Hai prodotti da mostrare?</b><small>Catalogo, fino a 20</small></span><em>400 €</em></label>
-          <label class="need"><input type="checkbox" value="400"><span><b>Tieni i clienti in un programma?</b><small>Le richieste del sito arrivano lì</small></span><em>400 €</em></label>
+          <label class="need"><input type="checkbox" data-n="prenotazioni online" value="300"><span><b>Il telefono non ti dà tregua?</b><small>Prenotazioni online</small></span><em>300 €</em></label>
+          <label class="need"><input type="checkbox" data-n="una lingua in più" value="200"><span><b>Hai clienti stranieri?</b><small>Il sito in un'altra lingua</small></span><em>200 €</em></label>
+          <label class="need"><input type="checkbox" data-n="menu con QR" value="150"><span><b>Menu o listino che cambiano?</b><small>Menu o listino con QR</small></span><em>150 €</em></label>
+          <label class="need"><input type="checkbox" data-n="promo che cambi tu" value="250"><span><b>Fai offerte e promozioni?</b><small>Promo che cambi tu</small></span><em>250 €</em></label>
+          <label class="need"><input type="checkbox" data-n="blog" value="450"><span><b>Hai cose da raccontare?</b><small>Blog che aggiorni tu</small></span><em>450 €</em></label>
+          <label class="need"><input type="checkbox" data-n="catalogo" value="400"><span><b>Hai prodotti da mostrare?</b><small>Catalogo, fino a 20</small></span><em>400 €</em></label>
+          <label class="need"><input type="checkbox" data-n="collegamento al tuo programma clienti" value="400"><span><b>Tieni i clienti in un programma?</b><small>Le richieste del sito arrivano lì</small></span><em>400 €</em></label>
         </div>
         <div class="needs" data-for="shop" hidden>
-          <label class="need"><input type="checkbox" value="400"><span><b>Vendi anche all'estero?</b><small>Negozio in un'altra lingua</small></span><em>400 €</em></label>
-          <label class="need"><input type="checkbox" value="600"><span><b>Usi un programma per magazzino o fatture?</b><small>Lo colleghiamo al negozio</small></span><em>600 €</em></label>
+          <label class="need"><input type="checkbox" data-n="una lingua in più" value="400"><span><b>Vendi anche all'estero?</b><small>Negozio in un'altra lingua</small></span><em>400 €</em></label>
+          <label class="need"><input type="checkbox" data-n="collegamento a magazzino o fatture" value="600"><span><b>Usi un programma per magazzino o fatture?</b><small>Lo colleghiamo al negozio</small></span><em>600 €</em></label>
         </div>
       </div>
       <div class="b-right" aria-live="polite">
@@ -455,15 +455,33 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <section class="sec coral-bg" id="contatti">
   <div class="shell close">
     <p class="kicker">Il prossimo passo</p>
-    <h2 class="close-h">Raccontaci la tua attività.</h2>
-    <p class="close-sub">Scegliamo insieme cosa ti serve, e torniamo da te con il sito pronto da guardare.</p>
+    <h2 class="close-h">Partiamo?</h2>
+    <p class="close-sub">Oggi fissiamo cosa ti serve. Al prossimo incontro il tuo referente torna con il sito pronto, da guardare insieme.</p>
+    <div class="deal" aria-live="polite">
+      <p class="ref-t">Il tuo sito</p>
+      <p class="deal-what" id="c-what">Sito monopagina</p>
+      <p class="deal-extra" id="c-extra">Senza extra</p>
+      <p class="deal-sum"><b id="c-net">1.100 €</b> + IVA</p>
+      <p class="deal-pay">Metà alla firma, il saldo quando il sito ti convince. Oppure 3 rate.</p>
+      <a class="deal-edit" href="#prezzi" data-cta="chiusura-cambia">Cambia</a>
+      <form class="send" id="send" novalidate>
+        <p class="send-t">Lo mandiamo allo studio</p>
+        <div class="send-grid">
+          <label>Attività<input name="nome" placeholder="es. Atelier Chiara" autocomplete="off"></label>
+          <label>Referente<input name="ref" placeholder="es. Marco" autocomplete="off"></label>
+        </div>
+        <label><span>Note <small>facoltative</small></span><textarea name="note" rows="2" placeholder="es. ha già il logo e le foto, vuole partire per marzo"></textarea></label>
+        <button type="submit" class="btn btn-coral" data-cta="invia-riepilogo">Invia il riepilogo a inMetamorfosi</button>
+        <p class="send-ok" id="send-ok" role="status" hidden>Si apre l'email con il riepilogo già scritto: basta premere Invia.</p>
+      </form>
+    </div>
     <div class="ref">
       <p class="ref-t">Il tuo referente</p>
-      <p class="ref-b"><b id="ref-name">Una persona sola</b> ti segue dal primo incontro alla messa online, e resta quella da chiamare anche dopo.</p>
-    </div>
-    <div class="close-actions">
-      <a class="btn btn-gold" href="https://wa.me/393888174824?text=Ciao%2C%20vorrei%20informazioni%20per%20il%20mio%20sito" target="_blank" rel="noopener" data-cta="whatsapp" data-wa data-wa-arrow>Scrivici su WhatsApp →</a>
-      <a class="btn btn-line" href="tel:+393888174824" data-cta="telefono" id="ref-tel" hidden></a>
+      <p class="ref-b"><b id="ref-name">Una persona sola</b> ti segue dal primo incontro alla messa online. Per qualsiasi domanda, anche dopo, è la persona da contattare.</p>
+      <div class="close-actions">
+        <a class="btn btn-gold" href="https://wa.me/393888174824?text=Ciao%2C%20vorrei%20informazioni%20per%20il%20mio%20sito" target="_blank" rel="noopener" data-cta="whatsapp" data-wa>Scrivici su WhatsApp</a>
+        <a class="btn btn-line" href="tel:+393888174824" data-cta="telefono" id="ref-tel" hidden></a>
+      </div>
     </div>
     <p class="close-note">Alle sue spalle c'è lo studio: <a href="tel:+393888174824" data-cta="telefono-studio">388 817 4824</a> · <a href="mailto:info@inmetamorfosi.com?subject=Il%20mio%20sito" data-cta="email">info@inmetamorfosi.com</a>, dal lunedì al venerdì, dalle 9 alle 18.</p>
     <p class="close-note"><a class="more" href="dettagli.html" data-cta="dettagli">Tutti i dettagli, da leggere con calma →</a></p>
@@ -485,7 +503,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   </div>
 </footer>
 
-<!-- pulsante fisso su telefono, per chi apre il link da solo -->
+<!-- pulsante fisso su telefono: serve a chi riceve il link e lo riapre da solo, per scrivere al referente -->
 <a class="mcta" id="mcta" href="https://wa.me/393888174824?text=Ciao%2C%20vorrei%20informazioni%20per%20il%20mio%20sito" target="_blank" rel="noopener" data-cta="whatsapp-fisso" data-wa>Scrivici su WhatsApp</a>
 
 <!-- ═══════════ SITO A TUTTO SCHERMO ═══════════ -->
@@ -527,6 +545,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   </form>
 </div>
 
-<script src="js/sito.js?v=60"></script>
+<script src="js/sito.js?v=72"></script>
 </body>
 </html>

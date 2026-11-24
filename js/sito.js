@@ -72,6 +72,8 @@
       var label = num && name ? "Scrivi a " + name + " su WhatsApp" : "Scrivici su WhatsApp";
       a.textContent = label + (a.hasAttribute("data-wa-arrow") ? " →" : "");
     });
+    var sf = document.getElementById("send");
+    if (sf) { if (who.nome) sf.elements.nome.value = who.nome; if (who.ref) sf.elements.ref.value = who.ref; }
     var tel = document.getElementById("ref-tel");
     if (tel) {
       tel.hidden = !num;
@@ -97,11 +99,33 @@
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
 
-  /* ---------- entrate leggere ---------- */
+  /* ---------- comparsa morbida mentre si scorre ---------- */
   var io = new IntersectionObserver(function (es) {
     es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
   }, { threshold: 0.25 });
   document.querySelectorAll(".swap").forEach(function (el) { io.observe(el); });
+
+  var RV = ".head, .why-card, .try, .dcard, .steps li, .when, .pledge, .own-head, .own-list > div, .fmt, .builder, .included, .qa, .studio, .g-score, .quotes figure, .close > *, .packs .pack, .xcols > div, .faqs .faq";
+  if ("IntersectionObserver" in window && !qs.get("shot") && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    var rio = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        var el = e.target;
+        rio.unobserve(el);
+        el.classList.add("in");
+        // a comparsa finita l'elemento torna "normale", così i movimenti al passaggio del mouse restano i suoi
+        setTimeout(function () { el.classList.remove("rv"); el.style.removeProperty("--d"); }, 1500);
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -6% 0px" });
+    document.querySelectorAll(RV).forEach(function (el) {
+      var r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight * 0.9) return; // quello che è già a schermo resta com'è
+      var sib = Array.prototype.filter.call(el.parentNode.children, function (x) { return x.matches(RV); });
+      el.style.setProperty("--d", Math.min(sib.indexOf(el), 4) * 0.08 + "s");
+      el.classList.add("rv");
+      rio.observe(el);
+    });
+  }
 
   /* ---------- la prova: cerchiamo insieme su Google e su ChatGPT ---------- */
   var tryForm = document.getElementById("try");
@@ -228,6 +252,7 @@
     if (dec) s += "," + (dec < 10 ? "0" : "") + dec;
     return s + " €";
   }
+  var quote = null;
   function calc() {
     var fmt = document.querySelector('input[name="fmt"]:checked').value;
     var group = fmt === "shop" ? "shop" : "site", net = PRICE[fmt];
@@ -247,6 +272,13 @@
     rHost.textContent = fmt === "shop"
       ? "Poi indirizzo ed email: qualche decina di euro l'anno. Più l'abbonamento a Shopify, circa 39 € al mese."
       : "Poi solo indirizzo e spazio online: qualche decina di euro l'anno.";
+    // riepilogo nella chiusura: è quello che il referente conferma con il cliente
+    var what = { one: "Sito monopagina", full: "Sito completo, " + pages + " pagine", shop: "Negozio online, " + (items.value === "0" ? "fino a 20 prodotti" : items.options[items.selectedIndex].text.split(" · ")[0] + " prodotti") }[fmt];
+    var ex = [];
+    document.querySelectorAll('.needs:not([hidden]) input:checked').forEach(function (m) { ex.push(m.getAttribute("data-n")); });
+    var cW = document.getElementById("c-what"), cE = document.getElementById("c-extra"), cN = document.getElementById("c-net");
+    quote = { what: what, ex: ex, net: net, gross: gross, rate: Math.round(gross / 3) };
+    if (cW) { cW.textContent = what; cE.textContent = ex.length ? "Con " + (ex.length > 1 ? ex.slice(0, -1).join(", ") + " e " + ex[ex.length - 1] : ex[0]) : "Senza extra"; cN.textContent = eur(net); }
     if (last !== null && last !== net) { var t = rNet.parentNode; t.classList.remove("bump"); void t.offsetWidth; t.classList.add("bump"); }
     last = net;
   }
@@ -261,6 +293,39 @@
     });
   });
   calc(); markOn();
+
+  /* ---------- riepilogo allo studio: apre l'email del tablet già scritta ---------- */
+  var STUDIO_MAIL = "info@inmetamorfosi.com";
+  var sendF = document.getElementById("send");
+  if (sendF) {
+    sendF.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var nome = sendF.elements.nome.value.trim(), ref = sendF.elements.ref.value.trim(), note = sendF.elements.note.value.trim();
+      sendF.elements.nome.classList.toggle("need-it", !nome);
+      if (!nome) { sendF.elements.nome.focus(); return; }
+      // resta salvato sul tablet, come dal pannello Personalizza
+      who.nome = nome; if (ref) who.ref = ref; save();
+      var q = quote, L = [];
+      L.push("Nuovo sito da preparare");
+      L.push("");
+      L.push("Cliente: " + nome + (who.settore ? ", " + who.settore : "") + (who.citta ? ", " + who.citta : ""));
+      L.push("Referente: " + (ref || "non indicato") + (who.tel ? " (" + who.tel + ")" : ""));
+      L.push("");
+      L.push("Tipo di sito: " + q.what);
+      L.push("Extra: " + (q.ex.length ? q.ex.join(", ") : "nessuno"));
+      L.push("Prezzo: " + eur(q.net) + " + IVA (" + eur(q.gross) + " con l'IVA, oppure 3 rate da circa " + eur(q.rate) + ")");
+      if (note) { L.push(""); L.push("Note: " + note); }
+      L.push("");
+      L.push("Inviato dalla pagina clienti il " + new Date().toLocaleString("it-IT", { dateStyle: "short", timeStyle: "short" }) + ".");
+      L.push("Il referente vi chiama per completare i dettagli.");
+      var subj = "Nuovo sito: " + nome + (ref ? " (referente " + ref + ")" : "");
+      var url = "mailto:" + STUDIO_MAIL + "?subject=" + encodeURIComponent(subj) + "&body=" + encodeURIComponent(L.join("\r\n"));
+      sendF.setAttribute("data-mail", url);
+      location.href = url;
+      document.getElementById("send-ok").hidden = false;
+    });
+    sendF.elements.nome.addEventListener("input", function () { this.classList.remove("need-it"); });
+  }
 
   /* ---------- 06: le domande ---------- */
   var answers = document.getElementById("answers").content.querySelectorAll("p");
