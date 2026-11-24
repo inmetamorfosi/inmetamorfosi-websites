@@ -66,7 +66,7 @@
   function applyRef() {
     var num = waNumber(who.tel), name = who.ref;
     var refName = document.getElementById("ref-name");
-    if (refName) refName.textContent = name || "Una persona sola";
+    if (refName) refName.textContent = name || "Il tuo referente";
     document.querySelectorAll("[data-wa]").forEach(function (a) {
       a.setAttribute("href", "https://wa.me/" + (num || STUDIO_WA) + "?text=" + encodeURIComponent(WA_TEXT));
       var label = num && name ? "Scrivi a " + name + " su WhatsApp" : "Scrivici su WhatsApp";

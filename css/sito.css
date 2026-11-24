@@ -407,6 +407,8 @@ body.lb-open { overflow: hidden; }
 .send .btn { justify-self: start; margin-top: 4px; white-space: normal; text-align: center; line-height: 1.2; }
 .send-ok { font-size: .92rem; color: #1f7a4d; font-weight: 700; }
 .ref { margin-top: 16px; max-width: 560px; padding: 18px 20px 20px; border-radius: 20px; background: rgba(255,255,255,.14); }
+.ref-two { display: grid; gap: 14px; }
+.ref-two > div + div { padding-top: 14px; border-top: 1px solid rgba(255,255,255,.28); }
 .ref .close-actions { margin-top: 16px; }
 .ref-t { font-size: .78rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; opacity: .9; margin-bottom: 4px; }
 .ref-b { font-size: 1.08rem; line-height: 1.45; }
@@ -415,9 +417,9 @@ body.lb-open { overflow: hidden; }
 .coral-bg .btn-line:hover { background: #fff; color: var(--coral); border-color: #fff; }
 /* su schermi larghi il riepilogo sta a destra, accanto al titolo */
 @media (min-width: 1024px) {
-  .close { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 540px); grid-template-rows: repeat(6, auto) 1fr; column-gap: clamp(40px, 6vw, 96px); align-items: start; }
-  .close > * { grid-column: 1; }
-  .close > .deal { grid-column: 2; grid-row: 1 / -1; margin-top: 0; max-width: none; }
+  .close-deal { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 540px); grid-template-rows: repeat(6, auto) 1fr; column-gap: clamp(40px, 6vw, 96px); align-items: start; }
+  .close-deal > * { grid-column: 1; }
+  .close-deal > .deal { grid-column: 2; grid-row: 1 / -1; margin-top: 0; max-width: none; }
 }
 .close-note { margin-top: 22px; color: #fff3ef; max-width: 62ch; }
 .close-note + .close-note { margin-top: 10px; }
