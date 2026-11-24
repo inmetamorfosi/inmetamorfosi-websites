@@ -10,10 +10,9 @@ Sito statico: niente framework né build, si apre `index.html` e basta.
 inMetamorfosi websites/
 ├── index.html      la pagina principale, continua, con la barra delle sezioni
 ├── dettagli.html   la versione lunga con tutti i dettagli, da leggere con calma
-├── css/sito.css    grafica di index.html (palette di inmetamorfosi.com in cima, nelle variabili :root)
-├── css/style.css   grafica di dettagli.html
-├── js/sito.js      ricerca animata, esempi a tutto schermo, preventivo, domande, pannello del venditore
-├── js/main.js      script di dettagli.html
+├── css/sito.css    grafica di entrambe le pagine (palette di inmetamorfosi.com in cima, nelle variabili :root)
+├── js/sito.js      esempi a tutto schermo, preventivo, dubbi, pannello del venditore
+├── js/dettagli.js  nome e WhatsApp del commerciale nella pagina dei dettagli
 ├── media/          logo, anteprima per i link condivisi, anteprime degli esempi
 └── esempi/         i 6 siti dimostrativi (generati da build_esempi.py, vedi sotto)
 ```
@@ -22,8 +21,9 @@ inMetamorfosi websites/
 
 - **Colori**: solo quelli di inmetamorfosi.com (Porcelain #FDFBF4, Carbon #1D1D1B, Coral #E9472A, Amber Gold #FDBF2D, Sapphire Sky #1870CF). Sono in cima a `css/sito.css`.
 - **Esempi**: la griglia apre il sito a tutto schermo, con i pulsanti Computer / Telefono e i pallini "cosa c'è dentro" (verde incluso, arancione modulo extra, blu pagina in più). Link diretto a un esempio già aperto: `?apri=ceramiche` oppure `?apri=ceramiche&vista=mobile`.
-- **Pannello del venditore**: il pulsante "Personalizza" nel footer apre il pannello per scrivere nome, settore e città del cliente; la ricerca in apertura e l'esempio simile si adattano. Si può anche aprire la pagina con `?nome=…&settore=…&citta=…`.
-- **Prezzi**: sono scritti in `index.html` (formati e moduli) e calcolati in `js/sito.js` (oggetto `PRICE`). Se cambia il listino, vanno aggiornati in entrambi i punti, e anche in `dettagli.html`.
+- **Pannello del venditore**: il pulsante "Personalizza" nel footer apre il pannello per scrivere nome, settore e città del cliente, più nome e WhatsApp del commerciale; l'esempio in apertura e i contatti si adattano. Si può anche aprire la pagina con `?nome=…&settore=…&citta=…&ref=…&tel=…`.
+- **Percorso di vendita**: il commerciale propone; se il cliente accetta torna con il sito pronto; ultimi ritocchi scritti sul sito; saldo e messa online. Il saldo si paga quando il sito convince.
+- **Prezzi**: sono scritti in `index.html` (tipi di sito ed extra) e calcolati in `js/sito.js` (oggetto `PRICE`). Se cambia il listino, vanno aggiornati in entrambi i punti, e anche in `dettagli.html`.
 - **Siti dimostrativi**: si rigenerano con `python3 build_esempi.py clienti` dalla cartella `Pronto Online 2.0/Esempi/` (fuori da questo repository).
 - **Modulo contatti**: apre WhatsApp o l'email con il messaggio già scritto, nessun dato passa da un server.
 

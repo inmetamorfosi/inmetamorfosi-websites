@@ -27,8 +27,7 @@
     document.querySelectorAll('[data-fill="ask"]').forEach(function (el) {
       el.textContent = "Chi mi consigli come " + sector() + (who.citta ? " a " + who.citta : " qui vicino") + "?";
     });
-    var url = document.getElementById("sd-url");
-    if (url) url.textContent = (who.nome ? slug(who.nome) : "iltuosito") + ".it";
+    document.querySelectorAll('[data-fill="search"]').forEach(function (el) { el.textContent = query(); });
     // l'esempio dello stesso settore va per primo, con l'etichetta "Simile al tuo"
     var pick = null, s = (who.settore || "").toLowerCase(), grid = document.getElementById("demos");
     if (grid) {
@@ -41,9 +40,17 @@
         .sort(function (a, b) { return (+a.getAttribute("data-i")) - (+b.getAttribute("data-i")); })
         .forEach(function (c) { grid.appendChild(c); });
       if (pick) { pick.classList.add("match"); grid.insertBefore(pick, grid.firstChild); }
+      // l'apertura mostra l'esempio più vicino all'attività del cliente
+      var first = pick || grid.querySelector(".dcard");
+      var pk = document.getElementById("peek");
+      if (pk && first) {
+        pk.setAttribute("data-site", first.getAttribute("data-site"));
+        document.getElementById("peek-img").setAttribute("src", "media/esempi/demo-" + first.getAttribute("data-site") + ".jpg?v=4");
+        document.getElementById("peek-name").textContent = first.getAttribute("data-name");
+        document.getElementById("peek-url").textContent = slug(first.getAttribute("data-name")) + ".it";
+      }
     }
     applyRef();
-    playSearch(true);
   }
 
   /* ---------- il commerciale di riferimento: nome e WhatsApp nei contatti ---------- */
@@ -69,22 +76,6 @@
       tel.hidden = !num;
       if (num) { tel.setAttribute("href", "tel:+" + num); tel.textContent = name ? "Chiama " + name : "Chiama"; }
     }
-  }
-
-  /* ---------- apertura: la ricerca si scrive da sola, poi compare il sito del cliente ---------- */
-  var demo = document.getElementById("search-demo"), q = document.getElementById("sd-q"), timers = [];
-  function later(fn, ms) { timers.push(setTimeout(fn, ms)); }
-  function playSearch(restart) {
-    if (!demo) return;
-    timers.forEach(clearTimeout); timers = [];
-    demo.classList.add("typing");
-    q.textContent = "";
-    var text = query(), i = 0;
-    later(function step() {
-      q.textContent = text.slice(0, ++i);
-      if (i < text.length) later(step, 60);
-      else later(function () { demo.classList.remove("typing"); }, 450);
-    }, restart ? 300 : 800);
   }
 
   /* ---------- barra delle sezioni: evidenzia dove sei ---------- */
@@ -209,6 +200,11 @@
     show(list[(i + d + list.length) % list.length]);
   }
   cards.forEach(function (c) { c.addEventListener("click", function () { open(c); }); });
+  var peek = document.getElementById("peek");
+  if (peek) peek.addEventListener("click", function () {
+    var c = document.querySelector('.dcard[data-site="' + peek.getAttribute("data-site") + '"]') || cards[0];
+    if (c) open(c);
+  });
   document.getElementById("lb-close").addEventListener("click", close);
   document.getElementById("lb-prev").addEventListener("click", function () { step(-1); });
   document.getElementById("lb-next").addEventListener("click", function () { step(1); });
@@ -248,8 +244,8 @@
     rGross.textContent = eur(gross) + " con l'IVA";
     rRate.textContent = "oppure 3 rate da circa " + eur(Math.round(gross / 3));
     rHost.textContent = fmt === "shop"
-      ? "Poi dominio ed email, poche decine di euro l'anno, intestati a te. Più l'abbonamento a Shopify, circa 39 € al mese."
-      : "Poi solo dominio e hosting: poche decine di euro l'anno, intestati a te.";
+      ? "Poi indirizzo ed email: qualche decina di euro l'anno. Più l'abbonamento a Shopify, circa 39 € al mese."
+      : "Poi solo indirizzo e spazio online: qualche decina di euro l'anno.";
     if (last !== null && last !== net) { var t = rNet.parentNode; t.classList.remove("bump"); void t.offsetWidth; t.classList.add("bump"); }
     last = net;
   }
@@ -299,9 +295,6 @@
 
   /* ---------- modalità foto (?shot=1): tutto già acceso, per gli screenshot ---------- */
   if (qs.get("shot")) {
-    timers.forEach(clearTimeout);
-    q.textContent = query();
-    demo.classList.remove("typing");
     document.querySelectorAll(".swap").forEach(function (el) { el.classList.add("in"); });
     document.documentElement.classList.add("shot");
   }

@@ -52,7 +52,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Strichpunkt+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/sito.css?v=46">
+<link rel="stylesheet" href="css/sito.css?v=51">
 <link rel="icon" href="media/logo-inmetamorfosi.svg" type="image/svg+xml">
 </head>
 <body>
@@ -63,7 +63,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <div class="shell nav-in">
     <a href="#inizio" class="nav-logo" aria-label="inMetamorfosi, torna su"><img src="media/logo-inmetamorfosi.svg" alt="inMetamorfosi"></a>
     <div class="nav-links" id="nav-links">
-      <a href="#prova">La prova</a>
+      <a href="#perche">Perché</a>
       <a href="#esempi">Esempi</a>
       <a href="#come">Come funziona</a>
       <a href="#prezzi">Prezzi</a>
@@ -90,49 +90,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <ul class="proofs">
         <li><b>Su misura</b><span>per la tua attività</span></li>
         <li><b>Testi scritti da noi</b><span>da quello che ci racconti</span></li>
-        <li><b>Prezzo fisso</b><span>nessun canone</span></li>
+        <li><b>Prezzo fisso</b><span>nessun canone sul sito</span></li>
       </ul>
     </div>
 
-    <!-- la ricerca che si scrive da sola: in cima compare il sito del cliente -->
-    <div class="search-card" id="search-demo" aria-hidden="true">
-      <div class="sc-bar">
-        <svg viewBox="0 0 24 24" class="sc-ico"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg>
-        <span class="sc-q" id="sd-q">parrucchiere vicino a me</span><i class="sc-caret"></i>
-      </div>
-      <div class="sc-you">
-        <span class="sc-url" id="sd-url">iltuosito.it</span>
-        <b class="sc-name" data-fill="nome">Il tuo nome</b>
-        <span class="sc-stars"><span class="st">★★★★★</span> 5,0 · recensioni Google</span>
-        <span class="sc-actions"><em>Chiama</em><em>WhatsApp</em><em>Indicazioni</em></span>
-      </div>
-      <div class="sc-other"><span class="sc-url">altro-sito.it</span><i class="l w70"></i><i class="l w90 thin"></i></div>
-      <div class="sc-other"><span class="sc-url">un-altro.it</span><i class="l w55"></i><i class="l w80 thin"></i></div>
-      <p class="sc-cap">Così ti trova chi cerca quello che fai.</p>
-    </div>
+    <!-- un esempio vero da toccare: quello più vicino all'attività del cliente -->
+    <button type="button" class="peek" id="peek" data-cta="hero-esempio" aria-label="Apri il sito di esempio">
+      <span class="peek-bar"><i></i><i></i><i></i><span id="peek-url">atelierchiarahair.it</span></span>
+      <span class="peek-img"><img id="peek-img" src="media/esempi/demo-parrucchiere.jpg?v=4" alt="" width="960" height="600"></span>
+      <span class="peek-cap"><span><b id="peek-name">Atelier Chiara Hair</b><small>Sito dimostrativo, fatto da noi</small></span><em>Sfoglialo →</em></span>
+    </button>
   </div>
 </header>
-
-<!-- ═══════════ LA PROVA ═══════════ -->
-<section class="sec" id="prova">
-  <div class="shell">
-    <div class="head">
-      <p class="kicker">Facciamo una prova</p>
-      <h2>Un cliente nuovo ti sta cercando adesso. <span class="mute">Chi trova?</span></h2>
-      <p class="sub">Quando ti consigliano qualcuno, prima di chiamarlo lo cerchi su internet. I tuoi clienti fanno lo stesso con te. Guardiamo insieme cosa trovano.</p>
-    </div>
-    <form class="try" id="try" autocomplete="off">
-      <label class="try-f"><span>Cosa fai</span><input id="try-what" placeholder="es. parrucchiere" required></label>
-      <label class="try-f"><span>Dove</span><input id="try-where" placeholder="es. Udine"></label>
-      <button type="submit" class="btn btn-ink" data-engine="google" data-cta="prova-google">Cerca su Google ↗</button>
-      <button type="button" class="btn btn-line" id="try-ai" data-cta="prova-chatgpt">Chiedi a ChatGPT ↗</button>
-    </form>
-    <div class="try-notes">
-      <p><b>Chi non ti trova, chiama un altro.</b> Non perché lavori peggio: perché non ti ha visto.</p>
-      <p><b>Se nessuno in zona si presenta bene online,</b> il primo che lo fa si prende le ricerche di tutti.</p>
-    </div>
-  </div>
-</section>
 
 <!-- ═══════════ PERCHÉ ═══════════ -->
 <section class="sec stone" id="perche">
@@ -140,24 +109,30 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <div class="head">
       <p class="kicker">Cosa fa per te</p>
       <h2>Un sito che lavora per te, <span class="mute">anche quando sei chiuso.</span></h2>
+      <p class="sub">Quando ti consigliano qualcuno, prima di chiamarlo lo cerchi su internet. I tuoi clienti fanno lo stesso con te.</p>
     </div>
     <div class="why">
       <article class="why-card">
-        <div class="vig vig-ai" aria-hidden="true">
-          <p class="bub me" data-fill="ask">Chi mi consigli come parrucchiere qui vicino?</p>
-          <p class="bub ai">Ti consiglio <b data-fill="nome">il tuo nome</b>: ottime recensioni, e prenoti online.</p>
+        <div class="vig vig-find" aria-hidden="true">
+          <p class="bub me" data-fill="search">parrucchiere vicino a me</p>
+          <div class="find">
+            <b data-fill="nome">Il tuo nome</b>
+            <span>Aperto · chiude alle 19:00</span>
+            <span class="find-act"><em>Chiama</em><em>WhatsApp</em><em>Indicazioni</em></span>
+          </div>
         </div>
         <h3>Ti trovano</h3>
-        <p>Su Google, su Maps e quando chiedono a ChatGPT. Il sito è preparato per farti trovare da chi cerca quello che fai, nella tua zona.</p>
+        <p>Chi ti cerca su Google, su Maps o lo chiede a ChatGPT trova subito orari, servizi e contatti giusti.</p>
       </article>
       <article class="why-card">
         <div class="vig vig-rev" aria-hidden="true">
-          <p class="rv-score">5,0 <span class="rv-stars">★★★★★</span></p>
-          <p class="rv-txt">«Professionali e gentilissimi. Torno sempre.»</p>
-          <p class="rv-who">Recensione Google</p>
+          <p class="rv-lab">Le tue recensioni, in evidenza</p>
+          <p class="rv-row"><span class="rv-stars">★★★★★</span><i class="l w70"></i></p>
+          <p class="rv-row"><span class="rv-stars">★★★★★</span><i class="l w55"></i></p>
+          <p class="rv-row"><span class="rv-stars">★★★★★</span><i class="l w80"></i></p>
         </div>
         <h3>Si fidano</h3>
-        <p>Chi riceve un passaparola, prima di chiamarti controlla online. Un sito curato, con le tue recensioni, fa capire subito quanto lavori bene.</p>
+        <p>Chi riceve un passaparola, prima di chiamarti controlla online. Un sito curato, con le recensioni dei tuoi clienti, fa capire subito come lavori.</p>
       </article>
       <article class="why-card">
         <div class="vig vig-night" aria-hidden="true">
@@ -170,6 +145,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <p>Orari, servizi e prezzi sono già lì. Ti scrivono su WhatsApp o prenotano da soli, anche la sera. Tu rispondi quando hai un momento.</p>
       </article>
     </div>
+
+    <!-- facoltativo: il commerciale può cercare l'attività insieme al cliente -->
+    <form class="try" id="try" autocomplete="off">
+      <p class="try-t"><b>Curioso di vedere come ti trovano oggi?</b><span>Si apre una nuova scheda con la ricerca.</span></p>
+      <label class="try-f"><span>Cosa fai</span><input id="try-what" placeholder="es. parrucchiere" required></label>
+      <label class="try-f"><span>Dove</span><input id="try-where" placeholder="es. Udine"></label>
+      <button type="submit" class="btn btn-ink btn-sm" data-cta="prova-google">Cerca su Google ↗</button>
+      <button type="button" class="btn btn-line btn-sm" id="try-ai" data-cta="prova-chatgpt">Chiedi a ChatGPT ↗</button>
+    </form>
   </div>
 </section>
 
@@ -179,12 +163,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <div class="head">
       <p class="kicker">Gli esempi</p>
       <h2>Così ti vedranno <span class="gold">i tuoi clienti.</span></h2>
-      <p class="sub">Scegli un'attività come la tua e sfoglia il sito, come farebbe chi ti cerca. Si apre a tutto schermo: lo vedi dal computer e dal telefono, e scopri cosa è incluso e cosa è un extra.</p>
-    </div>
-    <div class="count">
-      <p><b>6</b><span>siti di esempio</span></p>
-      <p><b>26</b><span>pagine da sfogliare</span></p>
-      <p><b>3</b><span>formati: monopagina, completo, negozio online</span></p>
+      <p class="sub">Sei siti dimostrativi, costruiti da noi per sei attività diverse. Scegli quella più simile alla tua e sfoglia il sito a tutto schermo, dal computer e dal telefono: i pallini ti dicono cosa è incluso e cosa è un extra.</p>
     </div>
     <div class="demos" id="demos">
       <button type="button" class="dcard" data-site="parrucchiere" data-name="Atelier Chiara Hair" data-kind="Monopagina" data-mods="Prenotazioni online|Promo che cambi tu" data-sector="parrucchiere parrucchiera estetista estetica salone barbiere" data-cta="esempio-parrucchiere">
@@ -211,11 +190,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <span class="dcard-cta">Guarda il sito →</span>
         </span>
       </button>
-      <button type="button" class="dcard" data-site="impresa-edile" data-name="Rinaldi Costruzioni" data-kind="Completo" data-mods="Catalogo finiture|Collegamento al CRM" data-sector="impresa edile idraulico elettricista artigiano serramenti imbianchino" data-cta="esempio-impresa-edile">
+      <button type="button" class="dcard" data-site="impresa-edile" data-name="Rinaldi Costruzioni" data-kind="Completo" data-mods="Catalogo finiture|Richieste nel tuo programma clienti" data-sector="impresa edile idraulico elettricista artigiano serramenti imbianchino" data-cta="esempio-impresa-edile">
         <span class="dcard-img"><img src="media/esempi/demo-impresa-edile.jpg?v=4" alt="Anteprima del sito Rinaldi Costruzioni" loading="lazy" width="960" height="600"></span>
         <span class="dcard-body">
           <span class="dcard-top"><b>Rinaldi Costruzioni</b><small>Impresa edile</small></span>
-          <span class="chips"><span class="base">Completo</span><span>+ Catalogo finiture</span><span>+ Collegamento al CRM</span></span>
+          <span class="chips"><span class="base">Completo</span><span>+ Catalogo finiture</span><span>+ Richieste nel tuo programma clienti</span></span>
           <span class="dcard-cta">Guarda il sito →</span>
         </span>
       </button>
@@ -227,16 +206,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <span class="dcard-cta">Guarda il sito →</span>
         </span>
       </button>
-      <button type="button" class="dcard" data-site="ceramiche" data-name="Laguna Ceramiche" data-kind="Negozio online" data-mods="Collegamento al gestionale" data-sector="ceramiche laboratorio negozio bottega artigianato" data-cta="esempio-ceramiche">
+      <button type="button" class="dcard" data-site="ceramiche" data-name="Laguna Ceramiche" data-kind="Negozio online" data-mods="Collegato alla fatturazione" data-sector="ceramiche laboratorio negozio bottega artigianato" data-cta="esempio-ceramiche">
         <span class="dcard-img"><img src="media/esempi/demo-ceramiche.jpg?v=4" alt="Anteprima del sito Laguna Ceramiche" loading="lazy" width="960" height="600"></span>
         <span class="dcard-body">
           <span class="dcard-top"><b>Laguna Ceramiche</b><small>Laboratorio</small></span>
-          <span class="chips"><span class="base">Negozio online</span><span>+ Collegamento al gestionale</span></span>
+          <span class="chips"><span class="base">Negozio online</span><span>+ Collegato alla fatturazione</span></span>
           <span class="dcard-cta">Guarda il sito →</span>
         </span>
       </button>
     </div>
-    <p class="fine">Attività di esempio: nomi, foto e prezzi sono inventati. Il tuo sarà fatto su misura, con i tuoi contenuti.</p>
+    <p class="fine">Sono attività inventate: nomi, foto e prezzi servono solo da esempio. Il tuo sito sarà fatto su misura, con i tuoi contenuti.</p>
   </div>
 </section>
 
@@ -251,8 +230,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <ul class="swap" id="swap">
       <li><s>Scrivere i testi</s><span>Li scriviamo noi, partendo da quello che ci racconti.</span></li>
       <li><s>Sistemare le foto</s><span>Usiamo le tue e le sistemiamo. Se non ne hai, scegliamo noi immagini di repertorio.</span></li>
-      <li><s>Imparare un programma</s><span>Al sito pensiamo noi: online, sicuro, veloce.</span></li>
-      <li><s>Capire Google</s><span>Lo prepariamo per farti trovare, anche dagli assistenti AI.</span></li>
+      <li><s>Imparare un programma</s><span>Non devi installare né gestire niente: al sito pensiamo noi.</span></li>
+      <li><s>Capire Google</s><span>Lo prepariamo noi per farti trovare, anche da ChatGPT.</span></li>
     </ul>
   </div>
 </section>
@@ -266,18 +245,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <p class="sub">Sai sempre cosa succede e quando. Tu ci metti il tuo parere: il resto è lavoro nostro.</p>
     </div>
     <ol class="steps">
-      <li><span class="st-n">1</span><p class="st-when">Primo incontro</p><h3>Ci racconti la tua attività</h3><p>Di persona, con il tuo commerciale. Scegliete insieme formato e moduli, e raccoglie le informazioni e le foto che hai. Se ti convince, partiamo.</p></li>
+      <li><span class="st-n">1</span><p class="st-when">Primo incontro</p><h3>Ci racconti la tua attività</h3><p>Di persona, con il tuo commerciale. Scegliete insieme il tipo di sito e gli extra, e raccoglie le informazioni e le foto che hai. Se ti convince, partiamo.</p></li>
       <li><span class="st-n">2</span><p class="st-when">Secondo incontro</p><h3>Guardiamo insieme il tuo sito</h3><p>Il tuo commerciale torna con il sito pronto: il tuo nome, il tuo logo, le tue foto. Lo sfogliate insieme e segnate cosa cambiare.</p></li>
-      <li><span class="st-n">3</span><p class="st-when">Gli ultimi ritocchi</p><h3>Li scrivi direttamente sul sito</h3><p>Con le note segni ogni modifica nel punto esatto, anche dal telefono. Noi la applichiamo.</p></li>
-      <li><span class="st-n">4</span><p class="st-when">Online</p><h3>Saldi, e il sito è online</h3><p>Sul tuo dominio, pronto per farti trovare. Da quel momento è tuo.</p></li>
+      <li><span class="st-n">3</span><p class="st-when">Gli ultimi ritocchi</p><h3>Li scrivi direttamente sul sito</h3><p>Segni ogni modifica nel punto esatto, anche dal telefono, e noi la applichiamo. Hai due giri di modifiche inclusi.</p></li>
+      <li><span class="st-n">4</span><p class="st-when">Online</p><h3>Saldi, e il sito è online</h3><p>Al tuo indirizzo, pronto per farti trovare. Da quel momento è tuo.</p></li>
     </ol>
-    <div class="facts">
-      <p><b>4 giorni</b><span>per il sito monopagina</span></p>
-      <p><b>7 giorni</b><span>per il sito completo</span></p>
-      <p><b>15 giorni</b><span>per il negozio online</span></p>
-      <p><b>2 giri</b><span>di modifiche inclusi</span></p>
+    <div class="when">
+      <p class="when-t">Quanto passa tra il primo e il secondo incontro</p>
+      <div class="facts">
+        <p><b>1 settimana</b><span>per il sito monopagina</span></p>
+        <p><b>2 settimane</b><span>per il sito completo</span></p>
+        <p><b>3 settimane</b><span>per il negozio online</span></p>
+      </div>
+      <p class="fine">Tempi indicativi, da quando abbiamo firma, logo, foto e contatti.</p>
     </div>
-    <p class="fine">Giorni lavorativi, da quando abbiamo firma, logo, foto e contatti.</p>
+    <p class="pledge"><b>Il saldo lo paghi solo quando il sito ti convince.</b> Lo guardi, chiedi le modifiche, e va online dopo il tuo ok.</p>
   </div>
 </section>
 
@@ -291,8 +273,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </div>
     <div class="own-list">
       <div><b>Nessun canone sul sito</b><p>Niente rate mensili per una cosa che non è tua.</p></div>
-      <div><b>Dominio e hosting intestati a te</b><p>Poche decine di euro l'anno, come per qualsiasi sito. Sono tuoi, e noi su questo non guadagniamo niente. Se li hai già, usiamo quelli.</p></div>
+      <div><b>Indirizzo e spazio online intestati a te</b><p>Sono il dominio e l'hosting: qualche decina di euro l'anno, come per qualsiasi sito. Sono tuoi, e noi su questo non guadagniamo niente. Se li hai già, usiamo quelli.</p></div>
       <div><b>Libero di cambiare</b><p>Se un giorno vuoi cambiare dominio o hosting, ti consegniamo i file del sito: è incluso nel pacchetto.</p></div>
+      <div><b>Solo per il negozio online</b><p>C'è l'abbonamento a Shopify, la piattaforma su cui gira il negozio: circa 39 € al mese, che paghi direttamente a loro.</p></div>
     </div>
   </div>
 </section>
@@ -303,13 +286,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <div class="head">
       <p class="kicker">Prezzi</p>
       <h2>Prezzi fissi, scritti qui. <span class="mute">Senza sorprese.</span></h2>
-      <p class="sub">Scegli il formato e aggiungi solo quello che ti serve: il totale si aggiorna subito.</p>
+      <p class="sub">Scegli il tipo di sito e aggiungi solo quello che ti serve: il totale si aggiorna subito.</p>
     </div>
 
     <div class="formats" role="radiogroup" aria-label="Formato">
       <label class="fmt">
         <input type="radio" name="fmt" value="one" checked>
-        <span class="fmt-top"><b>Sito monopagina</b><em>Il più scelto</em></span>
+        <span class="fmt-top"><b>Sito monopagina</b><em>Una pagina sola</em></span>
         <span class="fmt-desc">Una pagina con tutto quello che serve per farti trovare e contattare.</span>
         <span class="fmt-price">1.100 € <small>+ IVA</small></span>
       </label>
@@ -321,7 +304,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       </label>
       <label class="fmt">
         <input type="radio" name="fmt" value="shop">
-        <span class="fmt-top"><b>Negozio online</b><em>su Shopify</em></span>
+        <span class="fmt-top"><b>Negozio online</b><em>più Shopify, circa 39 € al mese</em></span>
         <span class="fmt-desc">Per vendere i tuoi prodotti. I primi 20 li carichiamo noi.</span>
         <span class="fmt-price">2.500 € <small>+ IVA</small></span>
       </label>
@@ -353,11 +336,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <label class="need"><input type="checkbox" value="250"><span><b>Fai offerte e promozioni?</b><small>Promo che cambi tu</small></span><em>250 €</em></label>
           <label class="need"><input type="checkbox" value="450"><span><b>Hai cose da raccontare?</b><small>Blog che aggiorni tu</small></span><em>450 €</em></label>
           <label class="need"><input type="checkbox" value="400"><span><b>Hai prodotti da mostrare?</b><small>Catalogo, fino a 20</small></span><em>400 €</em></label>
-          <label class="need"><input type="checkbox" value="400"><span><b>Usi già un gestionale clienti?</b><small>Collegamento al CRM</small></span><em>400 €</em></label>
+          <label class="need"><input type="checkbox" value="400"><span><b>Tieni i clienti in un programma?</b><small>Le richieste del sito arrivano lì</small></span><em>400 €</em></label>
         </div>
         <div class="needs" data-for="shop" hidden>
           <label class="need"><input type="checkbox" value="400"><span><b>Vendi anche all'estero?</b><small>Negozio in un'altra lingua</small></span><em>400 €</em></label>
-          <label class="need"><input type="checkbox" value="600"><span><b>Usi un gestionale o la fatturazione?</b><small>Collegamento al gestionale</small></span><em>600 €</em></label>
+          <label class="need"><input type="checkbox" value="600"><span><b>Usi un programma per magazzino o fatture?</b><small>Lo colleghiamo al negozio</small></span><em>600 €</em></label>
         </div>
       </div>
       <div class="b-right" aria-live="polite">
@@ -366,9 +349,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <p class="r-line" id="r-gross">1.342 € con l'IVA</p>
         <p class="r-rate" id="r-rate">oppure 3 rate da circa 447 €</p>
         <div class="r-sep"></div>
-        <p class="r-line" id="r-host">Poi solo dominio e hosting: poche decine di euro l'anno, intestati a te.</p>
-        <p class="r-q">Quanto vale per te un cliente nuovo? Spesso ne bastano pochi per ripagare il sito.</p>
-        <p class="r-small">Metà alla firma, il saldo prima della messa online. Oppure 3 rate, con carta o Klarna.</p>
+        <p class="r-line" id="r-host">Poi solo indirizzo e spazio online: qualche decina di euro l'anno.</p>
+        <p class="r-small">Metà alla firma, il saldo quando il sito ti convince. Oppure 3 rate, con carta o Klarna.</p>
       </div>
     </div>
 
@@ -379,7 +361,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <li>Testi scritti da noi, da quello che ci racconti</li>
         <li>Le tue foto sistemate, o immagini di repertorio</li>
         <li>WhatsApp, chiamata, mappa, recensioni</li>
-        <li>Pronto per Google e per gli assistenti AI</li>
+        <li>Preparato per Google e per ChatGPT</li>
         <li>Veloce e sempre online</li>
         <li>Privacy, cookie e banner dei consensi</li>
         <li>2 giri di modifiche</li>
@@ -412,17 +394,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       </div>
       <div class="qa-answer" id="qa-answer" aria-live="polite"></div>
       <template id="answers">
-        <p>Quanto vale per te un cliente nuovo? Spesso ne bastano pochi per ripagare il sito. E <b>lo paghi una volta sola</b>, anche in tre rate: poi è tuo, senza canoni.</p>
+        <p>Il prezzo <b>lo sai prima di partire e non cambia</b>: da 1.100 € + IVA, anche in tre rate. Lo paghi una volta, senza canoni sul sito, e resta tuo.</p>
         <p>Facebook è una casa in affitto: le regole le decide qualcun altro, e chi cerca su Google non ti trova lì. <b>Il sito è casa tua</b>, e Facebook lo colleghiamo.</p>
-        <p>Lo guardiamo insieme appena è pronto, e ci dici cosa cambiare. Poi hai <b>due giri di modifiche</b>: le scrivi direttamente sul sito, nel punto esatto, e noi le facciamo. Va online quando ti convince.</p>
+        <p>Lo guardi con il tuo commerciale appena è pronto e dici cosa cambiare. Hai due giri di modifiche, scritte direttamente sul sito. E <b>il saldo lo paghi solo quando ti convince</b>.</p>
         <p>Proprio per questo: <b>ci basta un incontro.</b> I testi li scriviamo noi da quello che ci racconti, e le tue foto le sistemiamo noi. A te tocca solo guardare il sito e dirci cosa cambiare.</p>
         <p>Giusto così. Di solito a frenare è il prezzo, oppure il momento: <b>dicci qual è il tuo dubbio</b> e lo guardiamo insieme. Prezzi ed esempi restano qui, uguali per tutti.</p>
         <p>Guardiamolo insieme sul telefono. Se si vede bene e ti trovano su Google, <b>non ti serve niente.</b> Se no, gli esempi ti mostrano come potrebbe diventare.</p>
-        <p>Ottimo, se ha tempo. Ti chiedo solo: <b>tra un anno chi lo aggiorna</b>, e chi risponde se smette di funzionare? Con noi hai <b>una persona di riferimento</b> e uno studio alle spalle.</p>
+        <p>Può funzionare, se ha tempo di seguirlo anche tra un anno. Con noi hai testi scritti per te, <b>una persona di riferimento</b> e uno studio che resta raggiungibile.</p>
         <p>Esistono. Di solito i testi li scrivi tu, il modello è uguale per tutti e spesso c'è un canone mensile. <b>Qui il sito è fatto su misura per te</b>, i testi li scriviamo noi e poi è tuo.</p>
-        <p>Nessuno può promettertelo onestamente, e diffida di chi lo fa. <b>Noi lo costruiamo nel modo giusto</b>, per Google e per gli assistenti AI. Il resto lo fanno il tuo lavoro e il tempo.</p>
-        <p>Con i moduli Promo e Blog, <b>offerte e articoli li pubblichi tu</b>, anche dal telefono. Il negozio online lo gestisci tu. Per il resto ci scrivi e ti facciamo un preventivo.</p>
-        <p><b>Il tuo riferimento resta il commerciale che ti ha seguito</b>: lo chiami o gli scrivi, per qualsiasi cosa. E alle sue spalle c'è lo studio, dal lunedì al venerdì, dalle 9 alle 18.</p>
+        <p>Nessuno può promettertelo onestamente, e diffida di chi lo fa. <b>Noi lo costruiamo nel modo giusto</b>, per Google e per ChatGPT. Il resto lo fanno il tuo lavoro e il tempo.</p>
+        <p>Con gli extra Promo e Blog, <b>offerte e articoli li pubblichi tu</b>, anche dal telefono. Il negozio online lo gestisci tu. Per le altre modifiche ci scrivi: <b>ti diciamo il costo prima</b> di fare qualsiasi cosa.</p>
+        <p><b>Il tuo riferimento resta il commerciale che ti ha seguito</b>: lo chiami o gli scrivi, per qualsiasi cosa. E alle sue spalle c'è lo studio, che risponde dal lunedì al venerdì, dalle 9 alle 18.</p>
       </template>
     </div>
   </div>
@@ -434,16 +416,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <div class="head">
       <p class="kicker">Chi siamo</p>
       <h2>inMetamorfosi. <span class="gold">Marketing e comunicazione dal 2015.</span></h2>
-      <p class="sub">Studio digitale di Portogruaro: siti, immagine, social e pubblicità per imprenditori e attività come la tua. Lavoriamo insieme al tuo commerciale: è lui a seguirti di persona, noi costruiamo il sito.</p>
+      <p class="sub">Siamo lo studio che costruisce il tuo sito. Non spariamo dopo il contratto: il commerciale ti segue di persona, e noi restiamo raggiungibili.</p>
     </div>
+    <ul class="studio">
+      <li><b>Dal 2015</b><span>siti, immagine, social e pubblicità</span></li>
+      <li><b>Portogruaro (VE)</b><span>Via Stadio 10</span></li>
+      <li><b>0421 1531 026</b><span>lunedì–venerdì, 9–18</span></li>
+      <li><b><a href="https://www.inmetamorfosi.com" target="_blank" rel="noopener" data-cta="sito-studio">inmetamorfosi.com</a></b><span>il nostro sito</span></li>
+    </ul>
     <p class="g-score"><b>5,0</b><span class="q-stars">★★★★★</span><span>su Google</span></p>
     <div class="quotes">
       <figure><p class="q-stars">★★★★★</p><blockquote>«Team professionale e molto disponibile. Hanno trasformato il mio sito in uno strumento di lavoro vero. Risultati visibili già dal primo mese.»</blockquote><figcaption>Massimo Petracca<span>Imprenditore</span></figcaption></figure>
-      <figure><p class="q-stars">★★★★★</p><blockquote>«Serietà, velocità e creatività. Hanno capito esattamente cosa volevo e lo hanno realizzato superando le mie aspettative.»</blockquote><figcaption>Anna Barboni<span>Libera professionista</span></figcaption></figure>
       <figure><p class="q-stars">★★★★★</p><blockquote>«Professionali, puntuali e creativi. Il nuovo sito ha completamente cambiato la percezione della mia attività online. Grazie mille!»</blockquote><figcaption>Paola Sbaiz<span>Imprenditrice</span></figcaption></figure>
-      <figure><p class="q-stars">★★★★★</p><blockquote>«Collaborazione eccellente. Sono sempre aggiornati sulle ultime tendenze e sanno come applicarle al mio business in modo pratico.»</blockquote><figcaption>Francesco Colonna<span>Ristoratore</span></figcaption></figure>
-      <figure><p class="q-stars">★★★★★</p><blockquote>«Ho provato altre agenzie prima, ma nessuna lavorava con questa cura e attenzione ai dettagli. Il mio e-commerce ha triplicato le vendite.»</blockquote><figcaption>Diego Bucciol<span>E-commerce</span></figcaption></figure>
-      <figure><p class="q-stars">★★★★★</p><blockquote>«Finalmente un'agenzia che mantiene le promesse. Le campagne hanno portato contatti reali e qualificati. Consigliatissimi!»</blockquote><figcaption>Geom. Andrea Manfron<span>Geometra</span></figcaption></figure>
+      <figure><p class="q-stars">★★★★★</p><blockquote>«Serietà, velocità e creatività. Hanno capito esattamente cosa volevo e lo hanno realizzato superando le mie aspettative.»</blockquote><figcaption>Anna Barboni<span>Libera professionista</span></figcaption></figure>
     </div>
   </div>
 </section>
@@ -524,6 +509,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   </form>
 </div>
 
-<script src="js/sito.js?v=44"></script>
+<script src="js/sito.js?v=52"></script>
 </body>
 </html>
