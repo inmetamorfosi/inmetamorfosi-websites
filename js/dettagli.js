@@ -1,4 +1,4 @@
-/* inMetamorfosi Websites — pagina dei dettagli: il commerciale di riferimento nei contatti */
+/* inMetamorfosi Websites — pagina dei dettagli: il referente nei contatti */
 (function () {
   "use strict";
   var who = { ref: "", tel: "" };

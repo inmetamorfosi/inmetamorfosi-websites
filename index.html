@@ -52,7 +52,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Strichpunkt+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/sito.css?v=51">
+<link rel="stylesheet" href="css/sito.css?v=61">
 <link rel="icon" href="media/logo-inmetamorfosi.svg" type="image/svg+xml">
 </head>
 <body>
@@ -81,7 +81,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <div class="shell hero-grid">
     <div class="hero-copy">
       <p class="kicker" data-fill="per">Siti web su misura per attività e professionisti</p>
-      <h1>Il tuo sito, su misura. <span class="coral">Al resto pensiamo noi.</span></h1>
+      <h1><span class="ln"><span>Il tuo sito,</span></span> <span class="ln"><span><span class="hl">su misura.</span></span></span> <span class="ln coral"><span>Al resto</span></span> <span class="ln coral"><span>pensiamo noi.</span></span></h1>
       <p class="lede">Ci racconti la tua attività: da lì scriviamo i testi, sistemiamo le tue foto e costruiamo il sito. Tu lo guardi, ci dici cosa cambiare e va online. A prezzo fisso, ed è tuo.</p>
       <div class="hero-ctas">
         <a href="#esempi" class="btn btn-coral" data-cta="hero-esempi">Guarda gli esempi</a>
@@ -94,14 +94,32 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       </ul>
     </div>
 
-    <!-- un esempio vero da toccare: quello più vicino all'attività del cliente -->
-    <button type="button" class="peek" id="peek" data-cta="hero-esempio" aria-label="Apri il sito di esempio">
-      <span class="peek-bar"><i></i><i></i><i></i><span id="peek-url">atelierchiarahair.it</span></span>
-      <span class="peek-img"><img id="peek-img" src="media/esempi/demo-parrucchiere.jpg?v=4" alt="" width="960" height="600"></span>
-      <span class="peek-cap"><span><b id="peek-name">Atelier Chiara Hair</b><small>Sito dimostrativo, fatto da noi</small></span><em>Sfoglialo →</em></span>
+    <!-- un esempio che scorre da solo, su computer e telefono: si tocca per sfogliarlo -->
+    <button type="button" class="show" id="peek" data-cta="hero-esempio" aria-label="Apri il sito di esempio">
+      <span class="show-stage">
+        <span class="show-back" aria-hidden="true"></span>
+        <span class="show-dot" aria-hidden="true"></span>
+        <span class="lap">
+          <span class="lap-bar"><i></i><i></i><i></i><span id="peek-url">atelierchiarahair.it</span></span>
+          <span class="lap-screen"><img id="peek-desk" src="media/esempi/alto-parrucchiere.jpg" alt="" width="960" height="2025"></span>
+        </span>
+        <span class="tel"><span class="tel-screen"><img id="peek-mob" src="media/esempi/tel-parrucchiere.jpg" alt="" width="390" height="2500"></span></span>
+        <span class="chip c1" aria-hidden="true"><b>Nuova prenotazione</b>Sabato, ore 10:30</span>
+        <span class="chip c2" aria-hidden="true"><b>WhatsApp</b>Avete posto stasera?</span>
+        <span class="seal" aria-hidden="true"><svg viewBox="0 0 120 120"><defs><path id="seal-p" d="M60,60 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0"/></defs><text><textPath href="#seal-p">SU MISURA · PREZZO FISSO · È TUO · </textPath></text></svg></span>
+      </span>
+      <span class="show-cap"><span><b id="peek-name">Atelier Chiara Hair</b><small>Sito dimostrativo, fatto da noi</small></span><em>Sfoglialo →</em></span>
     </button>
   </div>
 </header>
+
+<!-- attività per cui lavoriamo: la striscia che scorre, come sul sito dello studio -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span>Parrucchieri</span><i class="s1">★</i><span>Ristoranti</span><i class="s2">★</i><span>Studi medici</span><i class="s3">★</i><span>Imprese edili</span><i class="s1">★</i><span>Cantine</span><i class="s2">★</i><span>Negozi</span><i class="s3">★</i><span>Artigiani</span><i class="s1">★</i><span>Centri estetici</span><i class="s2">★</i><span>Professionisti</span><i class="s3">★</i>
+    <span>Parrucchieri</span><i class="s1">★</i><span>Ristoranti</span><i class="s2">★</i><span>Studi medici</span><i class="s3">★</i><span>Imprese edili</span><i class="s1">★</i><span>Cantine</span><i class="s2">★</i><span>Negozi</span><i class="s3">★</i><span>Artigiani</span><i class="s1">★</i><span>Centri estetici</span><i class="s2">★</i><span>Professionisti</span><i class="s3">★</i>
+  </div>
+</div>
 
 <!-- ═══════════ PERCHÉ ═══════════ -->
 <section class="sec stone" id="perche">
@@ -146,7 +164,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       </article>
     </div>
 
-    <!-- facoltativo: il commerciale può cercare l'attività insieme al cliente -->
+    <!-- facoltativo: chi presenta può cercare l'attività insieme al cliente -->
     <form class="try" id="try" autocomplete="off">
       <p class="try-t"><b>Curioso di vedere come ti trovano oggi?</b><span>Si apre una nuova scheda con la ricerca.</span></p>
       <label class="try-f"><span>Cosa fai</span><input id="try-what" placeholder="es. parrucchiere" required></label>
@@ -245,10 +263,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <p class="sub">Sai sempre cosa succede e quando. Tu ci metti il tuo parere: il resto è lavoro nostro.</p>
     </div>
     <ol class="steps">
-      <li><span class="st-n">1</span><p class="st-when">Primo incontro</p><h3>Ci racconti la tua attività</h3><p>Di persona, con il tuo commerciale. Scegliete insieme il tipo di sito e gli extra, e raccoglie le informazioni e le foto che hai. Se ti convince, partiamo.</p></li>
-      <li><span class="st-n">2</span><p class="st-when">Secondo incontro</p><h3>Guardiamo insieme il tuo sito</h3><p>Il tuo commerciale torna con il sito pronto: il tuo nome, il tuo logo, le tue foto. Lo sfogliate insieme e segnate cosa cambiare.</p></li>
+      <li><span class="st-n">1</span><p class="st-when">Primo incontro</p><h3>Ci racconti la tua attività</h3><p>Di persona, con il tuo referente. Scegliete insieme il tipo di sito e gli extra, e raccoglie le informazioni e le foto che hai. Se ti convince, partiamo.</p></li>
+      <li><span class="st-n">2</span><p class="st-when">Secondo incontro</p><h3>Guardiamo insieme il tuo sito</h3><p>Il tuo referente torna con il sito pronto: il tuo nome, il tuo logo, le tue foto. Lo sfogliate insieme e segnate cosa cambiare.</p></li>
       <li><span class="st-n">3</span><p class="st-when">Gli ultimi ritocchi</p><h3>Li scrivi direttamente sul sito</h3><p>Segni ogni modifica nel punto esatto, anche dal telefono, e noi la applichiamo. Hai due giri di modifiche inclusi.</p></li>
-      <li><span class="st-n">4</span><p class="st-when">Online</p><h3>Saldi, e il sito è online</h3><p>Al tuo indirizzo, pronto per farti trovare. Da quel momento è tuo.</p></li>
+      <li><span class="st-n">4</span><p class="st-when">Online</p><h3>Dominio, saldo, online</h3><p>Fatte le modifiche scegliamo insieme l'indirizzo del sito, saldi, e va online. Da quel momento è tuo.</p></li>
     </ol>
     <div class="when">
       <p class="when-t">Quanto passa tra il primo e il secondo incontro</p>
@@ -396,15 +414,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <template id="answers">
         <p>Il prezzo <b>lo sai prima di partire e non cambia</b>: da 1.100 € + IVA, anche in tre rate. Lo paghi una volta, senza canoni sul sito, e resta tuo.</p>
         <p>Facebook è una casa in affitto: le regole le decide qualcun altro, e chi cerca su Google non ti trova lì. <b>Il sito è casa tua</b>, e Facebook lo colleghiamo.</p>
-        <p>Lo guardi con il tuo commerciale appena è pronto e dici cosa cambiare. Hai due giri di modifiche, scritte direttamente sul sito. E <b>il saldo lo paghi solo quando ti convince</b>.</p>
+        <p>Lo guardi con il tuo referente appena è pronto e dici cosa cambiare. Hai due giri di modifiche, scritte direttamente sul sito. E <b>il saldo lo paghi solo quando ti convince</b>.</p>
         <p>Proprio per questo: <b>ci basta un incontro.</b> I testi li scriviamo noi da quello che ci racconti, e le tue foto le sistemiamo noi. A te tocca solo guardare il sito e dirci cosa cambiare.</p>
         <p>Giusto così. Di solito a frenare è il prezzo, oppure il momento: <b>dicci qual è il tuo dubbio</b> e lo guardiamo insieme. Prezzi ed esempi restano qui, uguali per tutti.</p>
         <p>Guardiamolo insieme sul telefono. Se si vede bene e ti trovano su Google, <b>non ti serve niente.</b> Se no, gli esempi ti mostrano come potrebbe diventare.</p>
-        <p>Può funzionare, se ha tempo di seguirlo anche tra un anno. Con noi hai testi scritti per te, <b>una persona di riferimento</b> e uno studio che resta raggiungibile.</p>
+        <p>Può funzionare, se ha tempo di seguirlo anche tra un anno. Con noi hai testi scritti per te, <b>un referente</b> e uno studio che resta raggiungibile.</p>
         <p>Esistono. Di solito i testi li scrivi tu, il modello è uguale per tutti e spesso c'è un canone mensile. <b>Qui il sito è fatto su misura per te</b>, i testi li scriviamo noi e poi è tuo.</p>
         <p>Nessuno può promettertelo onestamente, e diffida di chi lo fa. <b>Noi lo costruiamo nel modo giusto</b>, per Google e per ChatGPT. Il resto lo fanno il tuo lavoro e il tempo.</p>
         <p>Con gli extra Promo e Blog, <b>offerte e articoli li pubblichi tu</b>, anche dal telefono. Il negozio online lo gestisci tu. Per le altre modifiche ci scrivi: <b>ti diciamo il costo prima</b> di fare qualsiasi cosa.</p>
-        <p><b>Il tuo riferimento resta il commerciale che ti ha seguito</b>: lo chiami o gli scrivi, per qualsiasi cosa. E alle sue spalle c'è lo studio, che risponde dal lunedì al venerdì, dalle 9 alle 18.</p>
+        <p><b>Il tuo referente resta lo stesso</b>: lo chiami o gli scrivi, per qualsiasi cosa. E alle sue spalle c'è lo studio, che risponde dal lunedì al venerdì, dalle 9 alle 18.</p>
       </template>
     </div>
   </div>
@@ -416,7 +434,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <div class="head">
       <p class="kicker">Chi siamo</p>
       <h2>inMetamorfosi. <span class="gold">Marketing e comunicazione dal 2015.</span></h2>
-      <p class="sub">Siamo lo studio che costruisce il tuo sito. Non spariamo dopo il contratto: il commerciale ti segue di persona, e noi restiamo raggiungibili.</p>
+      <p class="sub">Siamo lo studio che costruisce il tuo sito. Non spariamo dopo il contratto: il tuo referente ti segue di persona, e noi restiamo raggiungibili.</p>
     </div>
     <ul class="studio">
       <li><b>Dal 2015</b><span>siti, immagine, social e pubblicità</span></li>
@@ -440,8 +458,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <h2 class="close-h">Raccontaci la tua attività.</h2>
     <p class="close-sub">Scegliamo insieme cosa ti serve, e torniamo da te con il sito pronto da guardare.</p>
     <div class="ref">
-      <p class="ref-t">Il tuo riferimento</p>
-      <p class="ref-b"><b id="ref-name">Il commerciale che ti ha presentato questa pagina</b> ti segue dal primo incontro alla messa online, e resta la persona da chiamare anche dopo.</p>
+      <p class="ref-t">Il tuo referente</p>
+      <p class="ref-b"><b id="ref-name">Una persona sola</b> ti segue dal primo incontro alla messa online, e resta quella da chiamare anche dopo.</p>
     </div>
     <div class="close-actions">
       <a class="btn btn-gold" href="https://wa.me/393888174824?text=Ciao%2C%20vorrei%20informazioni%20per%20il%20mio%20sito" target="_blank" rel="noopener" data-cta="whatsapp" data-wa data-wa-arrow>Scrivici su WhatsApp →</a>
@@ -456,7 +474,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <footer class="foot">
   <div class="shell foot-in">
-    <img src="media/logo-solo-testo.svg" alt="inMetamorfosi" class="foot-logo">
+    <img src="media/logo-inmetamorfosi.svg" alt="inMetamorfosi" class="foot-logo">
     <p>INMETAMORFOSI SRLS · Via Stadio 10, 30026 Portogruaro (VE) · P.IVA IT04966310270 · Prezzi IVA esclusa</p>
     <p class="foot-links">
       <a href="https://www.inmetamorfosi.com" target="_blank" rel="noopener">Powered by inMetamorfosi</a>
@@ -497,7 +515,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <label>Nome dell'attività<input name="nome" placeholder="es. Atelier Chiara" autocomplete="off"></label>
     <label>Cosa fa<input name="settore" placeholder="es. parrucchiere" autocomplete="off"></label>
     <label>Città<input name="citta" placeholder="es. Udine" autocomplete="off"></label>
-    <p class="seller-t2">Tu, il suo riferimento</p>
+    <p class="seller-t2">Tu, il suo referente</p>
     <label>Il tuo nome<input name="ref" placeholder="es. Marco" autocomplete="off"></label>
     <label>Il tuo numero WhatsApp<input name="tel" type="tel" inputmode="tel" placeholder="es. 333 123 4567" autocomplete="off"></label>
     <div class="seller-row">
@@ -509,6 +527,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   </form>
 </div>
 
-<script src="js/sito.js?v=52"></script>
+<script src="js/sito.js?v=60"></script>
 </body>
 </html>

@@ -45,7 +45,8 @@
       var pk = document.getElementById("peek");
       if (pk && first) {
         pk.setAttribute("data-site", first.getAttribute("data-site"));
-        document.getElementById("peek-img").setAttribute("src", "media/esempi/demo-" + first.getAttribute("data-site") + ".jpg?v=4");
+        var site = first.getAttribute("data-site"), pd = document.getElementById("peek-desk"), pm = document.getElementById("peek-mob");
+        if (pd.getAttribute("src").indexOf("alto-" + site + ".") < 0) { pd.setAttribute("src", "media/esempi/alto-" + site + ".jpg"); pm.setAttribute("src", "media/esempi/tel-" + site + ".jpg"); }
         document.getElementById("peek-name").textContent = first.getAttribute("data-name");
         document.getElementById("peek-url").textContent = slug(first.getAttribute("data-name")) + ".it";
       }
@@ -53,7 +54,7 @@
     applyRef();
   }
 
-  /* ---------- il commerciale di riferimento: nome e WhatsApp nei contatti ---------- */
+  /* ---------- il referente: nome e WhatsApp nei contatti ---------- */
   var STUDIO_WA = "393888174824", WA_TEXT = "Ciao, vorrei informazioni per il mio sito";
   function waNumber(t) {
     var d = (t || "").replace(/\D/g, "");
@@ -65,7 +66,7 @@
   function applyRef() {
     var num = waNumber(who.tel), name = who.ref;
     var refName = document.getElementById("ref-name");
-    if (refName) refName.textContent = name || "Il commerciale che ti ha presentato questa pagina";
+    if (refName) refName.textContent = name || "Una persona sola";
     document.querySelectorAll("[data-wa]").forEach(function (a) {
       a.setAttribute("href", "https://wa.me/" + (num || STUDIO_WA) + "?text=" + encodeURIComponent(WA_TEXT));
       var label = num && name ? "Scrivi a " + name + " su WhatsApp" : "Scrivici su WhatsApp";
@@ -249,14 +250,17 @@
     if (last !== null && last !== net) { var t = rNet.parentNode; t.classList.remove("bump"); void t.offsetWidth; t.classList.add("bump"); }
     last = net;
   }
-  document.querySelectorAll('#prezzi input, #prezzi select').forEach(function (el) { el.addEventListener("change", calc); });
+  function markOn() {
+    document.querySelectorAll("#prezzi .fmt, #prezzi .need").forEach(function (l) { l.classList.toggle("on", l.querySelector("input").checked); });
+  }
+  document.querySelectorAll('#prezzi input, #prezzi select').forEach(function (el) { el.addEventListener("change", function () { calc(); markOn(); }); });
   document.querySelectorAll("[data-step]").forEach(function (b) {
     b.addEventListener("click", function () {
       pages = Math.max(5, Math.min(10, pages + parseInt(b.getAttribute("data-step"), 10)));
       pagesOut.textContent = pages; calc();
     });
   });
-  calc();
+  calc(); markOn();
 
   /* ---------- 06: le domande ---------- */
   var answers = document.getElementById("answers").content.querySelectorAll("p");
